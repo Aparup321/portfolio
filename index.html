@@ -1,71 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neo-Brutalist Portfolio</title>
-    <meta name="description" content="A stark, bold showcase of web development work.">
+    <title>Aparup Santra - Portfolio</title>
+    <meta name="description" content="A dark themed portfolio showcasing data insights.">
+    <!-- Load FontAwesome for any external icons if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
 
-    <nav style="justify-content: flex-end;">
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>I build<br>bold web<br>experiences.</h1>
-                <p>Frontend Developer focusing on striking interfaces and performant code.</p>
-                <div class="hero-btns">
-                    <a href="#work" class="btn btn-pink">View Projects</a>
-                    <a href="#contact" class="btn btn-yellow">Hire Me</a>
-                </div>
+    <div class="nav-wrapper">
+        <nav>
+            <div class="nav-left">
+                <!-- User Uploaded Batman Logo (Blended via CSS) -->
+                <img class="main-logo-img" src="assets/images/logo.png" alt="Batman Logo">
             </div>
+            <ul class="nav-links">
+                <li><a href="#about-details">About Vengeance</a></li>
+                <li><a href="#work">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero" id="about">
+        <div class="container hero-grid">
+
+            <!-- Left Side Data text representing 'JUSTICE, NOT CHAOS' -->
+            <div class="hero-left">
+                <h1>CODE IN<br>THE SHADOWS</h1>
+                <br>Building web apps, mobile apps, and turning data into power. Focused on clean, efficient solutions
+                and solving real-world problems—silently, but effectively.</p>
+            </div>
+
+
+
         </div>
     </section>
 
-    <!-- Marquee divider -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>HTML5</span> • <span>CSS3</span> • <span>JavaScript</span> • <span>React</span> • <span>Tailwind</span> • <span>Figma</span> • 
-            <span>HTML5</span> • <span>CSS3</span> • <span>JavaScript</span> • <span>React</span> • <span>Tailwind</span> • <span>Figma</span> • 
-        </div>
-    </div>
+    <!-- Dossier Section seamlessly integrated -->
+    <section class="hero" id="about-details" style="min-height: auto; padding-top: 4rem; padding-bottom: 6rem; border-top: 1px solid rgba(255, 30, 30, 0.1);">
+        <div class="container hero-grid" style="align-items: flex-start;">
 
+            <!-- Left Side Mission Statement -->
+            <div class="hero-left">
+                <h2 style="font-size: 3rem; color: var(--accent-red); margin-bottom: 1rem; line-height: 1.1;">THE ARCHITECTURE<br>OF JUSTICE</h2>
+                <p>Behind every clean solution lies a battlefield of raw data. I uncover the narrative hidden in the chaos, transforming noise into strategic advantages. My methodology is precise. My execution is silent.</p>
+            </div>
+
+            <!-- Right Side Deep Details Card -->
+            <div class="hero-right">
+                <div class="hero-card" style="max-width: 100%; width: 100%;">
+                    <div class="hero-card-content">
+                        <h2>DOSSIER: APARUP</h2>
+                        <h3>System Details • Capabilities • Directives</h3>
+                        
+                        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                            I am a Data Analyst capable of unraveling complex datasets to engineer powerful, real-world solutions. I observe the patterns others ignore and construct data pipelines that never fail. When Gotham needs insights, I deliver truth.
+                        </p>
+                        
+                        <h4 style="color: white; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">Core Operational Directives</h4>
+                        <ul class="bio-list" style="margin-bottom: 2rem;">
+                            <li><strong>Tactical Data Visualization:</strong> Translating millions of rows into sharp, commanding dashboards (PowerBI, Tableau, D3.js).</li>
+                            <li><strong>Algorithmic Machine Learning:</strong> Deploying predictive models to forecast chaos before it erupts.</li>
+                            <li><strong>Database Architecture:</strong> Maintaining rigorous order across SQL/NoSQL systems.</li>
+                            <li><strong>Full-Stack Interception:</strong> Building robust web and mobile applications to seamlessly deliver intel.</li>
+                        </ul>
+
+                        <h4 style="color: white; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">Recent Operations</h4>
+                        <ul class="bio-list">
+                            <li>Orchestrated the <strong>Health Mate</strong> system via TypeScript to secure vital biometrics.</li>
+                            <li>Deployed high-conversion storefront algorithms for the E-Commerce initiative.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section styled like 'The Shop' -->
     <section id="work">
         <div class="container">
-            <h2 class="section-title">Selected Work</h2>
-            
+            <h2 class="section-title">Selected Projects</h2>
+
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="card">
-                    <div class="card-header c-cyan">
-                        <span>FinTech Dashboard</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <div class="card-icon">
+                        <!-- Placing a red bat logo replacing the t-shirt graphic -->
+                        <svg viewBox="0 0 100 50">
+                            <path
+                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
+                        </svg>
+                    </div>
+                    <div class="card-header">
+                        Health Mate
                     </div>
                     <div class="card-body">
-                        <p>A sleek financial dashboard with real-time analytics and data visualization features.</p>
+                        <p>A comprehensive health and wellness application built with TypeScript.</p>
                         <div class="tags">
-                            <span class="tag">React</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Tailwind</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">HealthTech</span>
                         </div>
-                        <a href="#" class="btn" style="width: 100%; text-align: center;">View Project</a>
+                        <div class="card-footer">
+                            <a href="https://github.com/Aparup321/health-mate-2.0" target="_blank"
+                                class="btn-small">View Project</a>
+                            <i class="fab fa-github card-link-icon"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="card">
-                    <div class="card-header c-pink">
-                        <span>E-Commerce Store</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 100 50">
+                            <path
+                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
+                        </svg>
+                    </div>
+                    <div class="card-header">
+                        E-Commerce Store
                     </div>
                     <div class="card-body">
                         <p>A high-conversion frontend for a streetwear brand, fully responsive and accessible.</p>
@@ -73,15 +132,23 @@
                             <span class="tag">Next.js</span>
                             <span class="tag">Stripe API</span>
                         </div>
-                        <a href="#" class="btn" style="width: 100%; text-align: center;">View Project</a>
+                        <div class="card-footer">
+                            <a href="#" class="btn-small">View Project</a>
+                            <i class="fab fa-github card-link-icon"></i>
+                        </div>
                     </div>
                 </div>
-                
+
                 <!-- Project 3 -->
                 <div class="card">
-                    <div class="card-header c-yellow">
-                        <span>Creative Agency</span>
-                        <i class="fas fa-arrow-right"></i>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 100 50">
+                            <path
+                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
+                        </svg>
+                    </div>
+                    <div class="card-header">
+                        Creative Agency
                     </div>
                     <div class="card-body">
                         <p>A portfolio website for a local creative agency featuring WebGL animations.</p>
@@ -89,27 +156,26 @@
                             <span class="tag">Three.js</span>
                             <span class="tag">GSAP</span>
                         </div>
-                        <a href="#" class="btn" style="width: 100%; text-align: center;">View Project</a>
+                        <div class="card-footer">
+                            <a href="#" class="btn-small">View Project</a>
+                            <i class="fab fa-github card-link-icon"></i>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="footer" id="contact">
         <div class="container">
-            <h2>Let's collaborate</h2>
-            <p style="font-size: 1.5rem; font-weight: bold; background: black; display: inline-block;">Available for freelance opportunities!</p>
-            
-            <div class="socials">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            
-            <p style="margin-top: 4rem; font-weight: bold;">© 2026 DEVFOLIO. No rights reserved.</p>
+            <h2 style="color: var(--accent-red); margin-bottom: 1rem; font-size: 2rem;">Let's collaborate</h2>
+            <p style="color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto;">Currently open to
+                new opportunities. Reach out if you'd like to work together.</p>
+            <p style="margin-top: 3rem; color: #4a4a4a; font-size: 0.8rem;">© 2026 APARUP SANTRA. ALL DATA RESERVED.</p>
         </div>
     </section>
 
 </body>
+
 </html>
