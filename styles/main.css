@@ -381,6 +381,26 @@ nav {
   background: var(--bg-dark);
 }
 
+.footer-social-link {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer-social-link:hover {
+  color: var(--accent-red);
+  transform: translateY(-3px);
+}
+
+.footer-social-link i {
+  font-size: 1.5rem;
+}
+
 /* =========================================
    RESPONSIVE DESIGN (TABLETS & MOBILE)
    ========================================= */
