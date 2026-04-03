@@ -405,33 +405,49 @@ nav {
   .hero-right {
     justify-content: center;
   }
+
+  .terminal-container {
+    margin: 0 auto;
+  }
   
   nav {
     flex-direction: column;
     padding: 1rem;
     border-radius: 20px;
+    gap: 1rem;
   }
   
   .nav-left {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   
   .nav-links { 
     gap: 1.5rem; 
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-right {
+    margin-top: 0.5rem;
   }
 }
 
 @media (max-width: 600px) {
   .hero {
-    padding-top: 12rem; /* Give space for expanded stacked navbar */
+    padding-top: 14rem; /* Give space for expanded vertically stacked navbar */
   }
 
   .hero-left h1 { 
-    font-size: 3rem; 
+    font-size: 2.5rem; 
+    line-height: 1.1;
   }
   
   .hero-left p {
     font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 2rem !important;
   }
   
   .hero-card { 
@@ -445,14 +461,18 @@ nav {
     margin-top: 1.5rem;
   }
   
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-  
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .terminal-container {
+    font-size: 0.75rem;
+    padding: 0.8rem;
+    height: 280px;
+  }
+
+  .true-ascii {
+    font-size: 0.4rem;
   }
 
   .section-title {
@@ -472,6 +492,14 @@ nav {
   .card-footer .btn-small {
     width: 100%;
     text-align: center;
+  }
+
+  .footer h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .footer a {
+    font-size: 1rem !important;
   }
 }
 
