@@ -582,6 +582,7 @@ nav {
 .system-response {
   color: #ff4d4d;
   text-shadow: 0 0 3px #ff4d4d;
+  margin-bottom: 0.2rem;
 }
 
 .user-cmd {
@@ -598,6 +599,13 @@ nav {
   font-size: 0.6rem;
   line-height: 1.1;
   white-space: pre;
+}
+
+.matrix-text {
+  color: #ff1a1a;
+  opacity: 0.8;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
 }
 
 .terminal-input-line {
@@ -620,4 +628,104 @@ nav {
   width: 100%;
   outline: none;
   text-shadow: 0 0 3px white;
+}
+
+/* =========================================
+   HIGH-TECH CUSTOMIZATIONS (v2.5)
+   ========================================= */
+
+/* Cursor Spotlight */
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, transparent 10%, rgba(10, 5, 5, 0.8) 40%);
+  z-index: 9999;
+  transition: background 0.1s ease;
+  mix-blend-mode: multiply;
+}
+
+/* System Vitals Widget */
+.vitals-widget {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: rgba(15, 8, 8, 0.8);
+  border: 1px solid rgba(255, 30, 30, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-red);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  min-width: 150px;
+}
+
+.vitals-header {
+  border-bottom: 1px solid rgba(255, 30, 30, 0.3);
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.vitals-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.vitals-row span:last-child {
+  color: white;
+  font-weight: bold;
+}
+
+/* Hacking Scramble Animation */
+.scramble-flicker {
+  animation: flicker 0.2s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* Bat-Signal Background */
+.bat-signal {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+  opacity: 0.05;
+  filter: blur(2px);
+  animation: signal-float 10s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes signal-float {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+  50% { transform: translate(-20px, -10px) scale(1.1); opacity: 0.07; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+}
+
+/* Glitch Effect for Section Titles */
+.glitch-title:hover {
+  animation: title-glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  color: white;
+}
+
+@keyframes title-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); color: var(--accent-red); }
+  40% { transform: translate(-2px, -2px); text-shadow: 2px 0 red, -2px 0 blue; }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
 }
