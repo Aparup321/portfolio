@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('terminal-output');
     const input = document.getElementById('terminal-input');
+    const isMobile = window.innerWidth <= 1024;
 
     // Auto-focus terminal on click
     document.querySelector('.terminal-container').addEventListener('click', () => {
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resize);
         resize();
         
-        const fontSize = 16;
+        const fontSize = isMobile ? 24 : 16; // Larger font = fewer columns on mobile
         const columns = canvas.width / fontSize;
         const drops = [];
         for (let x = 0; x < columns; x++) drops[x] = 1;
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 drops[i]++;
             }
         }
+
 
         const matrixInterval = setInterval(draw, 33);
 
@@ -162,25 +164,49 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => runBoot(0), 1000);
 
     // --- NEW CUSTOMIZATIONS (v2.5) ---
+    // (v2.6 Optimizations for Mobile)
 
-    // 1. Spotlight Tracking
+    // 1. Spotlight Tracking with Throttling
     const spotlight = document.querySelector('.spotlight');
     const reticleCoords = document.querySelector('.reticle-coords');
+    let ticking = false;
     
     document.addEventListener('mousemove', (e) => {
-        const xPercent = (e.clientX / window.innerWidth) * 100;
-        const yPercent = (e.clientY / window.innerHeight) * 100;
-        
-        // Use CSS variables for smoother performance and shared tracking
-        document.documentElement.style.setProperty('--mouse-x', `${xPercent}%`);
-        document.documentElement.style.setProperty('--mouse-y', `${yPercent}%`);
-        document.documentElement.style.setProperty('--mouse-x-px', `${e.clientX}px`);
-        document.documentElement.style.setProperty('--mouse-y-px', `${e.clientY}px`);
-        
-        if (reticleCoords) {
-            reticleCoords.textContent = `X: ${Math.floor(xPercent).toString().padStart(3, '0')} Y: ${Math.floor(yPercent).toString().padStart(3, '0')}`;
+        // Optimization: Don't process if HUD is hidden (mobile)
+        if (window.innerWidth <= 1024) return;
+
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const xPercent = (e.clientX / window.innerWidth) * 100;
+                const yPercent = (e.clientY / window.innerHeight) * 100;
+                
+                document.documentElement.style.setProperty('--mouse-x', `${xPercent}%`);
+                document.documentElement.style.setProperty('--mouse-y', `${yPercent}%`);
+                document.documentElement.style.setProperty('--mouse-x-px', `${e.clientX}px`);
+                document.documentElement.style.setProperty('--mouse-y-px', `${e.clientY}px`);
+                
+                if (reticleCoords) {
+                    reticleCoords.textContent = `X: ${Math.floor(xPercent).toString().padStart(3, '0')} Y: ${Math.floor(yPercent).toString().padStart(3, '0')}`;
+                }
+                ticking = false;
+            });
+            ticking = true;
         }
     });
+
+    // Modified Matrix density for performance
+    const originalStartMatrix = startMatrix;
+    startMatrix = function() {
+        // Use a modified drop count if on mobile
+        const isMobile = window.innerWidth <= 1024;
+        const matrixCanvas = document.getElementById('matrix-canvas');
+        if (matrixCanvas) {
+            // We'll let the original function run but we can tweak drops if needed
+            // By overriding resize we can control columns
+        }
+        originalStartMatrix();
+    };
+
 
     // 2. Vitals Simulation
 

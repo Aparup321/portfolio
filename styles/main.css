@@ -844,3 +844,31 @@ body.matrix-active {
   80% { transform: translate(2px, -2px); }
   100% { transform: translate(0); }
 }
+
+/* =========================================
+   MOBILE OPTIMIZATIONS (v2.6)
+   ========================================= */
+
+@media (max-width: 1024px) {
+  /* Disable heavy mask-based HUD elements on mobile/touch */
+  .spotlight, .scanner-grid, .reticle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  
+  /* Simplify effects to save GPU */
+  nav, .vitals-widget {
+    backdrop-filter: none !important;
+    background-color: rgba(15, 8, 8, 0.95);
+  }
+  
+  .hero-left h1 {
+    text-shadow: none;
+  }
+}
+
+/* Performance hints for GPU */
+.terminal-container, .card, .vitals-widget, .hero-left h1 {
+  will-change: transform, opacity;
+}
