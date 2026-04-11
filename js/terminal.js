@@ -165,13 +165,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Spotlight Tracking
     const spotlight = document.querySelector('.spotlight');
+    const reticleCoords = document.querySelector('.reticle-coords');
+    
     document.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth) * 100;
-        const y = (e.clientY / window.innerHeight) * 100;
-        spotlight.style.background = `radial-gradient(circle at ${x}% ${y}%, transparent 10%, rgba(10, 5, 5, 0.8) 40%)`;
+        const xPercent = (e.clientX / window.innerWidth) * 100;
+        const yPercent = (e.clientY / window.innerHeight) * 100;
+        
+        // Use CSS variables for smoother performance and shared tracking
+        document.documentElement.style.setProperty('--mouse-x', `${xPercent}%`);
+        document.documentElement.style.setProperty('--mouse-y', `${yPercent}%`);
+        document.documentElement.style.setProperty('--mouse-x-px', `${e.clientX}px`);
+        document.documentElement.style.setProperty('--mouse-y-px', `${e.clientY}px`);
+        
+        if (reticleCoords) {
+            reticleCoords.textContent = `X: ${Math.floor(xPercent).toString().padStart(3, '0')} Y: ${Math.floor(yPercent).toString().padStart(3, '0')}`;
+        }
     });
 
     // 2. Vitals Simulation
+
     function updateVitals() {
         const cpu = (Math.random() * 5 + 1).toFixed(1);
         const gpu = (Math.random() * 3 + 0.5).toFixed(1);

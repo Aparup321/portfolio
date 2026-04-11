@@ -677,8 +677,7 @@ body.matrix-active {
   --bg-dark: #000;
 }
 
-/* Cursor Spotlight */
-
+/* Cursor Spotlight (Punching hole in scanner grid) */
 .spotlight {
   position: fixed;
   top: 0;
@@ -686,13 +685,85 @@ body.matrix-active {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, transparent 10%, rgba(10, 5, 5, 0.8) 40%);
   z-index: 9999;
-  transition: background 0.1s ease;
-  mix-blend-mode: multiply;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 150px, rgba(10, 5, 5, 0.4) 250px);
+  /* The grid is clipped by this spotlight */
+}
+
+/* Red Tech Grid Scanner */
+.scanner-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9997;
+  background-image: 
+    linear-gradient(rgba(255, 30, 30, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 30, 30, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: center center;
+  opacity: 1;
+  /* Use mask-image to "punch a hole" where the cursor is */
+  mask-image: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 150px, black 300px);
+  -webkit-mask-image: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 150px, black 300px);
+}
+
+/* Targeting Reticle */
+.reticle {
+  position: fixed;
+  left: var(--mouse-x-px, 50%);
+  top: var(--mouse-y-px, 50%);
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reticle > div {
+  position: absolute;
+  background-color: var(--accent-red);
+  box-shadow: 0 0 10px var(--accent-red);
+}
+
+.reticle-top, .reticle-bottom { width: 40px; height: 1.5px; }
+.reticle-left, .reticle-right { width: 1.5px; height: 40px; }
+
+.reticle-top { top: 30px; }
+.reticle-bottom { bottom: 30px; }
+.reticle-left { left: 30px; }
+.reticle-right { right: 30px; }
+
+.reticle-top { top: 0; }
+.reticle-bottom { bottom: 0; }
+.reticle-left { left: 0; }
+.reticle-right { right: 0; }
+
+.reticle-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+
+.reticle-coords {
+  position: absolute;
+  bottom: -30px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: var(--accent-red);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px var(--accent-red);
+  opacity: 0.8;
 }
 
 /* System Vitals Widget */
+
 .vitals-widget {
   position: fixed;
   bottom: 2rem;
