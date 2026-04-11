@@ -72,27 +72,68 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startMatrix() {
-        printLine("INITIALIZING DIGITAL RAIN...", "system-response");
-        setTimeout(() => {
-            const matrixLines = [
-                "0101010101010101010101",
-                "1010110110101010101011",
-                "SYSTEM OVERRIDE DETECTED",
-                "DECRYPTING ENCRYPTION KEYS...",
-                "ACCESS GRANTED TO GOTHAM-NET",
-                "BAT-IDENTITY RECOVERED"
-            ];
-            let count = 0;
-            const interval = setInterval(() => {
-                printLine(matrixLines[Math.floor(Math.random() * matrixLines.length)], "system-response matrix-text");
-                count++;
-                if (count > 15) {
-                    clearInterval(interval);
-                    printLine("--- MATRIX DECOUPLED ---", "system-response");
+        printLine("INITIATING SYSTEM BREACH...", "system-response");
+        printLine("INJECTING PAYLOAD: DIGITAL RAIN v4.0", "system-response");
+        
+        const canvas = document.getElementById('matrix-canvas');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        const body = document.body;
+        
+        // Activate global styles
+        body.classList.add('matrix-active');
+        
+        // Setup Canvas
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+        
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        for (let x = 0; x < columns; x++) drops[x] = 1;
+
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*".split("");
+
+        function draw() {
+            // Semi-transparent black to create trailing effect
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#ff1a1a"; // Batman Red
+            ctx.font = fontSize + "px Courier New";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
                 }
-            }, 100);
-        }, 500);
+                drops[i]++;
+            }
+        }
+
+        const matrixInterval = setInterval(draw, 33);
+
+        // Cleanup after 15 seconds
+        setTimeout(() => {
+            clearInterval(matrixInterval);
+            body.classList.remove('matrix-active');
+            printLine("BREACH DISPATCHED. CLEANUP COMPLETE.", "system-response");
+            printLine("SYSTEM RESTORED TO OPTIMAL STATE.", "system-response");
+            canvas.style.opacity = '0';
+            setTimeout(() => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                window.removeEventListener('resize', resize);
+            }, 1000);
+        }, 15000);
     }
+
 
     function scrollToBottom() {
         const container = document.querySelector('.terminal-container');

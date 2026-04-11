@@ -634,7 +634,51 @@ nav {
    HIGH-TECH CUSTOMIZATIONS (v2.5)
    ========================================= */
 
+/* Full-Screen Matrix Canvas */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998; /* Just below spotlight */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background: transparent;
+}
+
+body.matrix-active #matrix-canvas {
+  opacity: 1;
+}
+
+body.matrix-active {
+  overflow: hidden; /* Prevent scrolling during the breach */
+}
+
+body.matrix-active .hero-left h1,
+body.matrix-active .section-title,
+body.matrix-active .hero-card {
+  animation: matrix-glitch 0.2s infinite;
+  filter: hue-rotate(0deg) saturate(2);
+}
+
+@keyframes matrix-glitch {
+  0% { transform: translate(0); text-shadow: none; }
+  25% { transform: translate(-2px, 1px); text-shadow: 2px 0 red, -2px 0 blue; }
+  50% { transform: translate(2px, -1px); text-shadow: -2px 0 red, 2px 0 blue; }
+  75% { transform: translate(-1px, -2px); text-shadow: 1px 0 red, -1px 0 blue; }
+  100% { transform: translate(1px, 2px); text-shadow: -1px 0 red, 1px 0 blue; }
+}
+
+/* Accent Overload */
+body.matrix-active {
+  --accent-red: #ff3333;
+  --bg-dark: #000;
+}
+
 /* Cursor Spotlight */
+
 .spotlight {
   position: fixed;
   top: 0;
