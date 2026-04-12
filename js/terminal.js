@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const commands = {
-        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix\n> joker\n> batman\n> batmobile\n> clear',
+        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix     not recomended\n> joker\n> batman\n> batmobile\n> clear',
         'whoami': 'DOSSIER: APARUP SANTRA\nCLASSIFICATION: SOFTWARE ENGINEER & DATA ANALYST\nOBJECTIVE: Uncover insights. Build structural order from raw data.',
         'skills': 'CORE DIRECTIVES LOADED:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Tactical Problem Solving',
         'contact': 'INITIATE PROTOCOL:\nGITHUB: github.com/Aparup321\nEMAIL: gameraparup17@gmail.com\nSTATUS: Intercepting new opportunities.',
