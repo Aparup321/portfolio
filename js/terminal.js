@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(interval);
                 }
 
-                iteration += 1 / 3;
+                iteration += 1.5;
             }, 30);
             header.classList.add('scramble-flicker');
         });
