@@ -75,16 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function startMatrix() {
         printLine("INITIATING SYSTEM BREACH...", "system-response");
         printLine("INJECTING PAYLOAD: DIGITAL RAIN v4.0", "system-response");
-        
+
         const canvas = document.getElementById('matrix-canvas');
         if (!canvas) return;
-        
+
         const ctx = canvas.getContext('2d');
         const body = document.body;
-        
+
         // Activate global styles
         body.classList.add('matrix-active');
-        
+
         // Setup Canvas
         function resize() {
             canvas.width = window.innerWidth;
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         window.addEventListener('resize', resize);
         resize();
-        
+
         const fontSize = isMobile ? 24 : 16; // Larger font = fewer columns on mobile
         const columns = canvas.width / fontSize;
         const drops = [];
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const spotlight = document.querySelector('.spotlight');
     const reticleCoords = document.querySelector('.reticle-coords');
     let ticking = false;
-    
+
     document.addEventListener('mousemove', (e) => {
         // Optimization: Don't process if HUD is hidden (mobile)
         if (window.innerWidth <= 1024) return;
@@ -179,12 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
             window.requestAnimationFrame(() => {
                 const xPercent = (e.clientX / window.innerWidth) * 100;
                 const yPercent = (e.clientY / window.innerHeight) * 100;
-                
+
                 document.documentElement.style.setProperty('--mouse-x', `${xPercent}%`);
                 document.documentElement.style.setProperty('--mouse-y', `${yPercent}%`);
                 document.documentElement.style.setProperty('--mouse-x-px', `${e.clientX}px`);
                 document.documentElement.style.setProperty('--mouse-y-px', `${e.clientY}px`);
-                
+
                 if (reticleCoords) {
                     reticleCoords.textContent = `X: ${Math.floor(xPercent).toString().padStart(3, '0')} Y: ${Math.floor(yPercent).toString().padStart(3, '0')}`;
                 }
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modified Matrix density for performance
     const originalStartMatrix = startMatrix;
-    startMatrix = function() {
+    startMatrix = function () {
         // Use a modified drop count if on mobile
         const isMobile = window.innerWidth <= 1024;
         const matrixCanvas = document.getElementById('matrix-canvas');
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearInterval(interval);
                 }
 
-                iteration += 1.5;
+                iteration += 1;
             }, 30);
             header.classList.add('scramble-flicker');
         });
