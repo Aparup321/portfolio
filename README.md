@@ -34,7 +34,7 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About / Projects / Contact
 - Hero split layout with bat-signal SVG background
 - About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work (Health Mate, E-Commerce)
-- 3 project cards: Health Mate, Historia 2.0, Personal Portfolio
+- 6 project cards: Health Mate, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
 - Footer with email, Instagram, GitHub, `© 2026 APARUP SANTRA`
 
 **Responsive (v2.6 mobile opts)**
