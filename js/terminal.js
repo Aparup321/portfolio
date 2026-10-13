@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix     not recomended\n> joker\n> batman\n> batmobile\n> clear',
         'whoami': 'DOSSIER: APARUP SANTRA\nCLASSIFICATION: SOFTWARE ENGINEER & DATA ANALYST\nOBJECTIVE: Uncover insights. Build structural order from raw data.',
         'skills': 'CORE DIRECTIVES LOADED:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Tactical Problem Solving',
-        'contact': 'INITIATE PROTOCOL:\nGITHUB: github.com/Aparup321\nEMAIL: gameraparup17@gmail.com\nSTATUS: Intercepting new opportunities.',
+        'contact': 'INITIATE PROTOCOL:\nGITHUB: github.com/Aparup321\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Intercepting new opportunities.',
         'system': 'VITAL SIGNS: OPTIMAL\nLOCATION: GOTHAM CITY SECTOR 7\nBAT-SUIT: INTEGRITY 98%\nBATMOBILE: OFFLINE (CHARGING)\nNETWORK: SECURE BAT-NET v4.2',
         'joker': 'ACCESS DENIED. HA HA HA. \nI\'m not a monster, I\'m just ahead of the curve.',
         'batman': 'I AM VENGEANCE. I AM THE NIGHT.',
