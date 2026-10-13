@@ -14,19 +14,19 @@ A cinematic, Batman-inspired dark portfolio for **Aparup Santra** — Software E
 - Projects: `Selected Projects` grid
 - Contact: `Let's collaborate` footer
 
-Theme: Gotham black `#0a0505`, Batman red `#e61a1a`, Montserrat + Courier New mono, bat-signal motifs throughout.
+Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 
 ## Features
 
-**BATOS v2.5 Secure Terminal** (`js/terminal.js`)
+**Portfolio Terminal** (`js/terminal.js`)
 - Boot sequence with typewriter effect
-- Interactive commands: `help`, `whoami`, `skills`, `contact`, `system`, `matrix`, `joker`, `batman`, `batmobile`, `clear`
-- ASCII Batmobile art, click-to-focus, auto-scroll
+- Interactive commands: `help`, `whoami`, `skills`, `contact`, `system`, `matrix`, `clear`
+- Click-to-focus, auto-scroll
 
 **Immersive FX**
-- Red matrix digital rain overlay (`#matrix-canvas`, 15s breach via `matrix` command)
+- Red matrix digital rain overlay (`#matrix-canvas`, 15s effect via `matrix` command)
 - Cursor spotlight + red tech scanner grid + targeting reticle with live `X: / Y:` coords
-- Simulated System Integrity widget (CPU / GPU / MEM, updates every 3s)
+- Simulated System Status widget (CPU / GPU / MEM, updates every 3s)
 - Project card title scramble / hacking hover effect
 - Glitch hover on `.glitch-title`, floating bat-signal, CRT scanlines on terminal
 
@@ -34,7 +34,7 @@ Theme: Gotham black `#0a0505`, Batman red `#e61a1a`, Montserrat + Courier New mo
 - Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About / Projects / Contact
 - Hero split layout with bat-signal SVG background
 - About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work (Health Mate, E-Commerce)
-- 3 project cards: Health Mate, Historia 2.0, Batcomputer Portfolio
+- 3 project cards: Health Mate, Historia 2.0, Personal Portfolio
 - Footer with email, Instagram, GitHub, `© 2026 APARUP SANTRA`
 
 **Responsive (v2.6 mobile opts)**
@@ -53,7 +53,7 @@ Theme: Gotham black `#0a0505`, Batman red `#e61a1a`, Montserrat + Courier New mo
 
 ```
 portfolio/
-├── index.html          # Nav, hero, dossier, projects, footer
+├── index.html          # Nav, hero, about, projects, footer
 ├── CNAME               # aparup.xyz (GitHub Pages custom domain)
 ├── styles/
 │   └── main.css        # Theme, layout, terminal, FX, responsive (~874 lines)
@@ -75,14 +75,11 @@ Only `logo.png` and `batcave-bg.jpg` are currently referenced in code. The other
 | Command | Output |
 |---|---|
 | `help` | List all commands |
-| `whoami` | Dossier: Aparup Santra |
+| `whoami` | Name, role, focus |
 | `skills` | Data Viz / ML / Full-Stack |
 | `contact` | GitHub + email |
-| `system` | Vitals, Gotham Sector 7, Bat-Net v4.2 |
-| `matrix` | 15s red digital rain + glitch overload (not recommended on low-end) |
-| `joker` | `ACCESS DENIED. HA HA HA...` |
-| `batman` | `I AM VENGEANCE. I AM THE NIGHT.` |
-| `batmobile` | ASCII Batmobile |
+| `system` | Status, location, portfolio version |
+| `matrix` | 15s red digital rain + glitch effect |
 | `clear` | Clear terminal |
 
 ## Getting Started
@@ -104,9 +101,9 @@ python3 -m http.server 8000
 - **Colors:** `:root` in `styles/main.css` — `--accent-red`, `--bg-dark`, `--panel-bg`
 - **Terminal text:** `commands` + `bootLines` in `js/terminal.js`
 - **Projects:** duplicate a `.card` block in `#work` in `index.html`
-- **Bio/skills:** `.hero-card-content` dossier block in `#about-details`
+- **Bio/skills:** `.hero-card-content` about block in `#about-details`
 - **Contact:** `mailto:` + `.footer-social-link` block in `#contact`
-- **Vitals location label:** `.vitals-widget` `DST: GOTHAM CITY` in `index.html`
+- **Vitals location label:** `.vitals-widget` `LOC: INDIA` in `index.html`
 - **Logo blend:** `.main-logo-img` uses `filter: invert(1) contrast(200%)` + `mix-blend-mode: screen` to knock out the grey background
 
 ## Deployment

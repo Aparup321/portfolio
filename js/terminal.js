@@ -9,14 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const commands = {
-        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix     not recomended\n> joker\n> batman\n> batmobile\n> clear',
-        'whoami': 'DOSSIER: APARUP SANTRA\nCLASSIFICATION: SOFTWARE ENGINEER & DATA ANALYST\nOBJECTIVE: Uncover insights. Build structural order from raw data.',
-        'skills': 'CORE DIRECTIVES LOADED:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Tactical Problem Solving',
-        'contact': 'INITIATE PROTOCOL:\nGITHUB: github.com/Aparup321\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Intercepting new opportunities.',
-        'system': 'VITAL SIGNS: OPTIMAL\nLOCATION: GOTHAM CITY SECTOR 7\nBAT-SUIT: INTEGRITY 98%\nBATMOBILE: OFFLINE (CHARGING)\nNETWORK: SECURE BAT-NET v4.2',
-        'joker': 'ACCESS DENIED. HA HA HA. \nI\'m not a monster, I\'m just ahead of the curve.',
-        'batman': 'I AM VENGEANCE. I AM THE NIGHT.',
-        'batmobile': '   _..-------++._\n  .-\'/_\'._\'_\'_.-.\'  `_`.\n  `|/` `|  __/  / )/ `_\\\n  /`\' . \'_._// / (_;=//\n /) _/ /    / _(   ) \\\n   \'\'\''
+        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix\n> clear',
+        'whoami': 'NAME: APARUP SANTRA\nROLE: SOFTWARE ENGINEER & DATA ANALYST\nFOCUS: Building data-driven solutions from complex datasets.',
+        'skills': 'SKILLS:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Problem Solving',
+        'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
+        'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.5\nNETWORK: SECURE',
     };
 
     input.addEventListener('keydown', function (e) {
@@ -30,11 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (val === 'matrix') {
                     startMatrix();
                 } else if (commands[val]) {
-                    if (val === 'batmobile') {
-                        printLine(commands[val], 'system-response true-ascii');
-                    } else {
-                        typeWriter(commands[val], 'system-response');
-                    }
+                    typeWriter(commands[val], 'system-response');
                 } else {
                     printLine(`COMMAND NOT RECOGNIZED: ${val}`, 'error-cmd');
                 }
@@ -73,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startMatrix() {
-        printLine("INITIATING SYSTEM BREACH...", "system-response");
-        printLine("INJECTING PAYLOAD: DIGITAL RAIN v4.0", "system-response");
+        printLine("LOADING MATRIX EFFECT...", "system-response");
+        printLine("RENDERING: DIGITAL RAIN v4.0", "system-response");
 
         const canvas = document.getElementById('matrix-canvas');
         if (!canvas) return;
@@ -126,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             clearInterval(matrixInterval);
             body.classList.remove('matrix-active');
-            printLine("BREACH DISPATCHED. CLEANUP COMPLETE.", "system-response");
-            printLine("SYSTEM RESTORED TO OPTIMAL STATE.", "system-response");
+            printLine("EFFECT COMPLETE. CLEANING UP.", "system-response");
+            printLine("SYSTEM RESTORED TO NORMAL.", "system-response");
             canvas.style.opacity = '0';
             setTimeout(() => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -142,13 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
         container.scrollTop = container.scrollHeight;
     }
 
-    // Immersive Boot Sequence
+    // Boot Sequence
     const bootLines = [
-        "BATOS v2.5 KERNEL LOADED...",
-        "AUTHENTICATING VIGILANTE CREDENTIALS...",
-        "SCANNING GOTHAM CITY SECTORS...",
-        "WEATHER: HEAVY RAIN / VISIBILITY: LOW",
-        "ALL SYSTEMS NOMINAL. READY FOR DARKNESS.",
+        "PORTFOLIO OS v2.5 LOADED...",
+        "LOADING PROFILE...",
+        "CHECKING SYSTEM...",
+        "ALL SYSTEMS READY.",
         "Type 'help' to begin."
     ];
 
