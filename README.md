@@ -26,7 +26,6 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 **Immersive FX**
 - Red matrix digital rain overlay (`#matrix-canvas`, 15s effect via `matrix` command)
 - Cursor spotlight + red tech scanner grid + targeting reticle with live `X: / Y:` coords
-- Simulated System Status widget (CPU / GPU / MEM, updates every 3s)
 - Project card title scramble / hacking hover effect
 - Glitch hover on `.glitch-title`, floating bat-signal, CRT scanlines on terminal
 
@@ -58,7 +57,7 @@ portfolio/
 ├── styles/
 │   └── main.css        # Theme, layout, terminal, FX, responsive (~874 lines)
 ├── js/
-│   └── terminal.js     # Terminal, matrix, spotlight, vitals, scramble (~269 lines)
+│   └── terminal.js     # Terminal, matrix, spotlight, scramble
 └── assets/images/
     ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
     ├── batcave-bg.jpg  # Hero background
@@ -103,7 +102,6 @@ python3 -m http.server 8000
 - **Projects:** duplicate a `.card` block in `#work` in `index.html`
 - **Bio/skills:** `.hero-card-content` about block in `#about-details`
 - **Contact:** `mailto:` + `.footer-social-link` block in `#contact`
-- **Vitals location label:** `.vitals-widget` `LOC: INDIA` in `index.html`
 - **Logo blend:** `.main-logo-img` uses `filter: invert(1) contrast(200%)` + `mix-blend-mode: screen` to knock out the grey background
 
 ## Deployment

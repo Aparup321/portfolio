@@ -200,24 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-    // 2. Vitals Simulation
-
-    function updateVitals() {
-        const cpu = (Math.random() * 5 + 1).toFixed(1);
-        const gpu = (Math.random() * 3 + 0.5).toFixed(1);
-        const mem = (Math.random() * 0.5 + 4.5).toFixed(1);
-
-        const cpuEl = document.getElementById('vital-cpu');
-        const gpuEl = document.getElementById('vital-gpu');
-        const memEl = document.getElementById('vital-mem');
-
-        if (cpuEl) cpuEl.textContent = `${cpu}%`;
-        if (gpuEl) gpuEl.textContent = `${gpu}%`;
-        if (memEl) memEl.textContent = `${mem}GB`;
-    }
-    setInterval(updateVitals, 3000);
-
-    // 3. Hacking Scramble Hover Effect for Project Cards
+    // 2. Hacking Scramble Hover Effect for Project Cards
     const cards = document.querySelectorAll('.card');
     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
 
