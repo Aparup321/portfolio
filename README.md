@@ -5,12 +5,12 @@ A cinematic, Batman-inspired dark portfolio for **Aparup Santra** — Software E
 **Live:** https://aparup.xyz
 **Repo:** https://github.com/Aparup321/portfolio
 
-> Building web apps, mobile apps, and turning data into power. Focused on clean, efficient solutions and solving real-world problems — silently, but effectively.
+> I build web apps, mobile apps, and data-driven solutions. Focused on clean, efficient code and solving real-world problems.
 
 ## Preview
 
-- Hero: `CODE IN THE SHADOWS` + live BATOS secure terminal
-- Dossier: `THE ARCHITECTURE OF JUSTICE` + `DOSSIER: APARUP` card
+- Hero: `HI, I'M APARUP SANTRA` + live terminal
+- About: `TURNING DATA INTO SOLUTIONS` + `ABOUT: APARUP` card
 - Projects: `Selected Projects` grid
 - Contact: `Let's collaborate` footer
 
@@ -31,9 +31,9 @@ Theme: Gotham black `#0a0505`, Batman red `#e61a1a`, Montserrat + Courier New mo
 - Glitch hover on `.glitch-title`, floating bat-signal, CRT scanlines on terminal
 
 **Content Sections** (`index.html`)
-- Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About Vengeance / Projects / Contact
+- Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About / Projects / Contact
 - Hero split layout with bat-signal SVG background
-- Dossier card: Tactical Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Operations (Health Mate, E-Commerce)
+- About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work (Health Mate, E-Commerce)
 - 3 project cards: Health Mate, Historia 2.0, Batcomputer Portfolio
 - Footer with email, Instagram, GitHub, `© 2026 APARUP SANTRA`
 
