@@ -141,7 +141,7 @@ nav {
 }
 
 .hero-left h1 {
-  font-size: 5.5rem;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
   font-weight: 900;
   line-height: 1.1;
   text-transform: uppercase;
@@ -267,7 +267,7 @@ nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 2rem;
 }
 
@@ -374,6 +374,14 @@ nav {
   color: var(--accent-red);
 }
 
+/* Keep long email addresses inside narrow screens */
+#contact a[href^="mailto:"] {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: clamp(0.95rem, 4.5vw, 1.5rem) !important;
+  line-height: 1.5;
+}
+
 /* Footer / Contact */
 .footer {
   text-align: center;
@@ -419,7 +427,7 @@ nav {
   }
   
   .hero-left h1 { 
-    font-size: 4rem; 
+    line-height: 1.1;
   }
   
   .hero-right {
@@ -450,15 +458,29 @@ nav {
   .nav-right {
     margin-top: 0.5rem;
   }
+
+  /* Stack nav in normal flow so it never overlaps the hero */
+  .nav-wrapper {
+    position: static;
+    padding-top: 1rem;
+  }
+
+  .hero {
+    padding-top: 3rem;
+    min-height: auto;
+  }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .hero {
-    padding-top: 14rem; /* Give space for expanded vertically stacked navbar */
+    padding-top: 2rem;
   }
 
   .hero-left h1 { 
-    font-size: 2.5rem; 
     line-height: 1.1;
   }
   
@@ -489,6 +511,11 @@ nav {
     font-size: 0.75rem;
     padding: 0.8rem;
     height: 280px;
+  }
+
+  /* 16px+ prevents iOS Safari auto-zoom on focus */
+  #terminal-input {
+    font-size: 16px;
   }
 
   .true-ascii {
@@ -823,6 +850,20 @@ body.matrix-active {
   nav {
     backdrop-filter: none !important;
     background-color: rgba(15, 8, 8, 0.95);
+  }
+
+  /* Prevent squeezed nav on tablets / small laptops */
+  nav {
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  /* iOS Safari ignores background-attachment: fixed — use scroll */
+  .hero {
+    background-attachment: scroll;
   }
   
   .hero-left h1 {
