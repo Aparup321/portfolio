@@ -1,0 +1,16 @@
+{
+  "name": "Aparup Santra — Software Engineer & Data Analyst",
+  "short_name": "Aparup",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0505",
+  "theme_color": "#0a0505",
+  "description": "Portfolio of Aparup Santra — web apps, mobile apps, and data-driven solutions.",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

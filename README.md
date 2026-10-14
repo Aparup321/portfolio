@@ -20,8 +20,12 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 
 **Portfolio Terminal** (`js/terminal.js`)
 - Boot sequence with typewriter effect
-- Interactive commands: `help`, `whoami`, `skills`, `contact`, `system`, `matrix`, `clear`
+- Interactive commands: `help`, `whoami`, `skills`, `projects`, `experience`, `education`, `contact`, `resume`, `system`, `matrix`, `clear`
 - Click-to-focus, auto-scroll
+
+**Enhancements** (`js/enhancements.js`)
+- Scroll-reveal for cards / timeline, nav shrink on scroll, back-to-top button
+- Respects `prefers-reduced-motion`
 
 **Immersive FX**
 - Red matrix digital rain overlay (`#matrix-canvas`, 15s effect via `matrix` command)
@@ -29,13 +33,14 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - Glitch hover on `.glitch-title`, floating bat-signal, CRT scanlines on terminal
 
 **Content Sections** (`index.html`)
-- Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About / Projects / Contact
-- Hero split layout with bat-signal SVG background
-- About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work (Health Mate, E-Commerce)
-- 6 project cards: Health Mate, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
-- Footer with email, Instagram, GitHub, `© 2026 APARUP SANTRA`
+- Floating pill nav: `APARUP'S --- [logo] --- PORTFOLIO` + About / Experience / Projects / Contact
+- Hero split layout with bat-signal SVG background + CTAs (View Projects / Download Resume / Hire Me)
+- About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work + portrait (`portrait.jpg`, lazy-loaded)
+- Experience & Education timeline (`#experience`)
+- 6 project cards with gradient thumbnails: Health Mate, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
+- Contact footer with copy-email button + mailto form, email, Instagram, GitHub, LinkedIn
 
-**Responsive (v2.6 mobile opts)**
+**Responsive (v2.7 mobile opts)**
 - `<=1024px`: removes backdrop blur, reduces matrix density
 - `<=900px`: single-column hero, stacked pill nav
 - `<=600px`: scaled typography, full-width buttons, 280px terminal
@@ -51,22 +56,25 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 
 ```
 portfolio/
-├── index.html          # Nav, hero, about, projects, footer
+├── index.html          # Nav, hero, about, experience, projects, footer
 ├── CNAME               # aparup.xyz (GitHub Pages custom domain)
+├── manifest.webmanifest # PWA manifest
+├── robots.txt / sitemap.xml / 404.html
+├── .gitignore / .env.example / .well-known/security.txt
 ├── styles/
-│   └── main.css        # Theme, layout, terminal, FX, responsive (~874 lines)
+│   └── main.css        # Theme, layout, terminal, FX, responsive
 ├── js/
-│   └── terminal.js     # Terminal, matrix, scramble
-└── assets/images/
-    ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
-    ├── batcave-bg.jpg  # Hero background
-    ├── batmobile.png
-    ├── blueprint.png
-    ├── hero-bat-bg.png
-    └── portrait.png
+│   ├── terminal.js     # Terminal, matrix, scramble (v2.6 commands)
+│   └── enhancements.js # Scroll-reveal, nav shrink, back-to-top
+└── assets/
+    ├── resume.pdf      # Real resume (replace to update)
+    └── images/
+        ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
+        ├── batcave-bg.jpg  # Hero background (1920px, compressed)
+        └── portrait.jpg    # About portrait (600px, lazy-loaded)
 ```
 
-Only `logo.png` and `batcave-bg.jpg` are currently referenced in code. The other 4 images are unused assets.
+Images optimized v2.7: hero 3840px→1920px (~157KB), portrait PNG→JPG 600px (~43KB). Removed unused `batmobile.png`, `blueprint.png`, `hero-bat-bg.png`.
 
 ## Terminal Commands
 
@@ -75,8 +83,12 @@ Only `logo.png` and `batcave-bg.jpg` are currently referenced in code. The other
 | `help` | List all commands |
 | `whoami` | Name, role, focus |
 | `skills` | Data Viz / ML / Full-Stack |
-| `contact` | GitHub + email |
-| `system` | Status, location, portfolio version |
+| `projects` | Project list |
+| `experience` | Work summary |
+| `education` | MCA + Crime Detection |
+| `resume` | Resume download path |
+| `contact` | GitHub + LinkedIn + email |
+| `system` | Status, location, portfolio version (v2.6) |
 | `matrix` | 15s red digital rain + glitch effect |
 | `clear` | Clear terminal |
 
@@ -117,9 +129,10 @@ GitHub Pages, root deployment:
 - Email: aparupsantra2004@gmail.com
 - GitHub: https://github.com/Aparup321
 - Instagram: https://www.instagram.com/aparup_321/
+- LinkedIn: https://www.linkedin.com/in/aparup-santra-869a1743a/
 - Health Mate: https://github.com/Aparup321/health-mate-2.0
 - Historia 2.0: https://github.com/Aparup321/historia-2.0
 
 ## License
 
-© 2026 Aparup Santra. All rights reserved. No license file included — add one (e.g. MIT) if you want reuse to be allowed.
+© 2026 Aparup Santra. MIT — see `LICENSE`.
