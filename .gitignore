@@ -1,0 +1,15 @@
+# Secrets — never commit .env
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Dependencies / build (future use)
+node_modules/
+dist/
