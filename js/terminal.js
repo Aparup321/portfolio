@@ -159,38 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Delay start for dramatic effect
     setTimeout(() => runBoot(0), 1000);
 
-    // --- NEW CUSTOMIZATIONS (v2.5) ---
-    // (v2.6 Optimizations for Mobile) — matrix density handled via fontSize above
-
-    // 1. Spotlight Tracking with Throttling
-    const spotlight = document.querySelector('.spotlight');
-    const reticleCoords = document.querySelector('.reticle-coords');
-    let ticking = false;
-
-    document.addEventListener('mousemove', (e) => {
-        // Optimization: Don't process if HUD is hidden (mobile)
-        if (window.innerWidth <= 1024) return;
-
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                const xPercent = (e.clientX / window.innerWidth) * 100;
-                const yPercent = (e.clientY / window.innerHeight) * 100;
-
-                document.documentElement.style.setProperty('--mouse-x', `${xPercent}%`);
-                document.documentElement.style.setProperty('--mouse-y', `${yPercent}%`);
-                document.documentElement.style.setProperty('--mouse-x-px', `${e.clientX}px`);
-                document.documentElement.style.setProperty('--mouse-y-px', `${e.clientY}px`);
-
-                if (reticleCoords) {
-                    reticleCoords.textContent = `X: ${Math.floor(xPercent).toString().padStart(3, '0')} Y: ${Math.floor(yPercent).toString().padStart(3, '0')}`;
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-
-    // 2. Hacking Scramble Hover Effect for Project Cards
+    // 1. Hacking Scramble Hover Effect for Project Cards
     const cards = document.querySelectorAll('.card');
     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
 

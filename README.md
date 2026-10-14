@@ -25,7 +25,6 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 
 **Immersive FX**
 - Red matrix digital rain overlay (`#matrix-canvas`, 15s effect via `matrix` command)
-- Cursor spotlight + red tech scanner grid + targeting reticle with live `X: / Y:` coords
 - Project card title scramble / hacking hover effect
 - Glitch hover on `.glitch-title`, floating bat-signal, CRT scanlines on terminal
 
@@ -37,7 +36,7 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - Footer with email, Instagram, GitHub, `© 2026 APARUP SANTRA`
 
 **Responsive (v2.6 mobile opts)**
-- `<=1024px`: disables spotlight / grid / reticle, removes backdrop blur, reduces matrix density
+- `<=1024px`: removes backdrop blur, reduces matrix density
 - `<=900px`: single-column hero, stacked pill nav
 - `<=600px`: scaled typography, full-width buttons, 280px terminal
 
@@ -57,7 +56,7 @@ portfolio/
 ├── styles/
 │   └── main.css        # Theme, layout, terminal, FX, responsive (~874 lines)
 ├── js/
-│   └── terminal.js     # Terminal, matrix, spotlight, scramble
+│   └── terminal.js     # Terminal, matrix, scramble
 └── assets/images/
     ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
     ├── batcave-bg.jpg  # Hero background
