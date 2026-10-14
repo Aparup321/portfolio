@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'experience': 'EXPERIENCE:\n- Health Mate app (TypeScript)\n- E-commerce storefront features\n- Data dashboards (PowerBI, SQL)\nSee #experience section for full timeline.',
         'education': 'EDUCATION:\n- MCA — Final Year Project: Crime Detection\n  Chicago crime data, HDBSCAN + ML forecasting.',
         'resume': 'RESUME:\nDownload at assets/resume.pdf\nOr email aparupsantra2004@gmail.com for latest copy.',
-        'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nLINKEDIN: linkedin.com/in/aparup-santra\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
+        'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nLINKEDIN: linkedin.com/in/aparup-santra-869a1743a\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
         'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.6\nNETWORK: SECURE',
     };
 
