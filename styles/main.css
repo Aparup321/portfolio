@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+/* Fonts loaded via <link> in index.html for performance (was @import) */
 
 :root {
   --bg-dark: #0a0505;
@@ -874,4 +874,169 @@ body.matrix-active {
 /* Performance hints for GPU */
 .terminal-container, .card, .hero-left h1 {
   will-change: transform, opacity;
+}
+
+/* =========================================
+   ACCESSIBILITY + NEW SECTIONS (v2.6)
+   ========================================= */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent-red);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 20000;
+  border-radius: 0 0 8px 0;
+  font-weight: 800;
+  text-decoration: none;
+}
+.skip-link:focus {
+  left: 0;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--accent-red-bright);
+  outline-offset: 3px;
+}
+
+/* Hero CTAs */
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.btn-primary, .btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btn-primary {
+  background: var(--accent-red);
+  color: #fff;
+  border: 1px solid var(--accent-red);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--accent-red);
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--accent-red);
+}
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+}
+.btn-secondary:hover {
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--accent-red);
+}
+.hero-stats {
+  margin-top: 1.2rem !important;
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  letter-spacing: 1px;
+}
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 500px;
+}
+.about-highlights div {
+  background: var(--panel-bg);
+  border: var(--panel-border);
+  border-radius: 10px;
+  padding: 0.9rem;
+}
+.about-highlights strong { display: block; color: #fff; font-size: 0.9rem; }
+.about-highlights span { color: var(--text-muted); font-size: 0.75rem; }
+
+/* Timeline */
+#experience { border-top: 1px solid rgba(255,255,255,0.05); }
+.timeline {
+  display: grid;
+  gap: 1.2rem;
+  max-width: 800px;
+}
+.timeline-item {
+  background: var(--panel-bg);
+  border: var(--panel-border);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  border-left: 3px solid var(--accent-red);
+}
+.timeline-date {
+  font-family: 'Courier New', monospace;
+  color: var(--accent-red);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.timeline-item h3 { color: #fff; margin: 0.4rem 0 0.5rem; font-size: 1.1rem; }
+.timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Project icons (replaces identical bat SVGs) */
+.card-icon i {
+  font-size: 2.2rem;
+  color: var(--accent-red);
+  filter: drop-shadow(0 0 8px rgba(230,26,26,0.4));
+}
+
+/* Contact form */
+.email-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contact-form {
+  max-width: 560px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  gap: 0.9rem;
+  text-align: left;
+}
+.contact-form input, .contact-form textarea {
+  background: #0d0a0a;
+  border: 1px solid #331515;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  width: 100%;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: var(--accent-red);
+  outline: none;
+}
+.form-hint { color: #6b6b6b; font-size: 0.8rem; text-align: center; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@media (max-width: 600px) {
+  .hero-cta .btn-primary, .hero-cta .btn-secondary { width: 100%; text-align: center; }
+  .about-highlights { grid-template-columns: 1fr; }
 }

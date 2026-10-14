@@ -4,23 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparup Santra - Portfolio</title>
+    <title>Aparup Santra - Software Engineer & Data Analyst</title>
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <meta name="description" content="Portfolio of Aparup Santra - Data Analyst and Software Developer building web apps, mobile apps, and data solutions.">
-    <!-- Load FontAwesome for any external icons if needed -->
+    <meta name="theme-color" content="#0a0505">
+    <link rel="canonical" href="https://aparup.xyz/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aparup Santra - Software Engineer & Data Analyst">
+    <meta property="og:description" content="I build web apps, mobile apps, and data-driven solutions. Focused on clean, efficient code and solving real-world problems.">
+    <meta property="og:url" content="https://aparup.xyz/">
+    <meta property="og:image" content="https://aparup.xyz/assets/images/batcave-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aparup Santra - Software Engineer & Data Analyst">
+    <meta name="twitter:description" content="Web apps, mobile apps, and data-driven solutions.">
+    <meta name="twitter:image" content="https://aparup.xyz/assets/images/batcave-bg.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- Load FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles/main.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aparup Santra",
+      "url": "https://aparup.xyz/",
+      "jobTitle": "Software Engineer & Data Analyst",
+      "email": "mailto:aparupsantra2004@gmail.com",
+      "sameAs": [
+        "https://github.com/Aparup321",
+        "https://www.instagram.com/aparup_321/",
+        "https://www.linkedin.com/in/aparup-santra"
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Matrix Canvas Overlay -->
-    <canvas id="matrix-canvas"></canvas>
+    <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
     <!-- Spotlight Overlay -->
 
-    <div class="spotlight"></div>
-    <div class="scanner-grid"></div>
-    <div class="reticle">
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="scanner-grid" aria-hidden="true"></div>
+    <div class="reticle" aria-hidden="true">
         <div class="reticle-top"></div>
         <div class="reticle-bottom"></div>
         <div class="reticle-left"></div>
@@ -30,14 +60,15 @@
     </div>
 
 
-    <div class="nav-wrapper">
-        <nav>
+    <header class="nav-wrapper">
+        <nav aria-label="Primary">
             <div class="nav-left" style="display: flex; align-items: center; gap: 1rem;">
                 <span style="font-weight: 900; font-size: 1.1rem; letter-spacing: 2px; color: white;">APARUP'S---</span>
-                <img class="main-logo-img" src="assets/images/logo.png" alt="Logo" style="margin: 0 1rem;">
+                <img class="main-logo-img" src="assets/images/logo.png" alt="Aparup Santra logo" style="margin: 0 1rem;">
             </div>
             <ul class="nav-links">
                 <li><a href="#about-details">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#work">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -46,34 +77,44 @@
                     style="font-weight: 900; font-size: 1.1rem; letter-spacing: 2px; color: var(--accent-red);">---PORTFOLIO</span>
             </div>
         </nav>
-    </div>
+    </header>
 
+    <main id="main">
     <section class="hero" id="about">
         <div class="container hero-grid">
 
             <!-- Left Side Intro Text -->
             <div class="hero-left">
                 <!-- Bat Signal Background -->
-                <div class="bat-signal">
+                <div class="bat-signal" aria-hidden="true">
                     <svg viewBox="0 0 100 50" style="fill: var(--accent-red);">
                         <path d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
                     </svg>
                 </div>
                 <h1 class="glitch-title">HI, I'M<br>APARUP SANTRA</h1>
                 <p>I build web apps, mobile apps, and data-driven solutions. Focused on clean, efficient code and solving real-world problems.</p>
+                <div class="hero-cta">
+                    <a href="#work" class="btn-primary">View Projects</a>
+                    <a href="assets/resume.pdf" class="btn-secondary" download>Download Resume</a>
+                    <a href="#contact" class="btn-secondary">Hire Me</a>
+                </div>
+                <p class="hero-stats">6+ projects • Python / SQL / TypeScript • PowerBI / ML</p>
             </div>
 
             <div class="hero-right">
+                <div style="width:100%;max-width:500px;">
                 <p
                     style="color: var(--accent-red); font-weight: 800; margin-bottom: 0.8rem; font-size: 1.1rem; letter-spacing: 2px;">
                     ABOUT ME</p>
                 <div class="terminal-container" style="margin-top: 0;">
                     <div class="terminal-header">PORTFOLIO TERMINAL</div>
-                    <div id="terminal-output"></div>
+                    <div id="terminal-output" aria-live="polite"></div>
                     <div class="terminal-input-line">
-                        <span>></span>
-                        <input type="text" id="terminal-input" placeholder="_" autocomplete="off" spellcheck="false">
+                        <span aria-hidden="true">></span>
+                        <label class="visually-hidden" for="terminal-input">Terminal input</label>
+                        <input type="text" id="terminal-input" placeholder="type 'help'..." autocomplete="off" spellcheck="false" aria-label="Terminal input. Type help for commands.">
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -89,6 +130,11 @@
             <div class="hero-left">
                 <h2 class="glitch-title" style="font-size: 3rem; color: var(--accent-red); margin-bottom: 1rem; line-height: 1.1;">TURNING DATA<br>INTO SOLUTIONS</h2>
                 <p>I work with raw data to find clear patterns and build useful solutions. I focus on practical dashboards, reliable data pipelines, and applications that are easy to use and maintain.</p>
+                <div class="about-highlights">
+                    <div><strong>PowerBI + SQL</strong><span>Dashboards & pipelines</span></div>
+                    <div><strong>Python + ML</strong><span>Predictive models</span></div>
+                    <div><strong>TypeScript / React</strong><span>Web & mobile apps</span></div>
+                </div>
             </div>
 
             <!-- Right Side Details Card -->
@@ -121,12 +167,56 @@
                             <li>Built the <strong>Health Mate</strong> app with TypeScript for tracking health and wellness data.</li>
                             <li>Built storefront features for an e-commerce project.</li>
                         </ul>
+                        <div class="card-socials">
+                            <a href="https://github.com/Aparup321" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <!-- TODO: update LinkedIn URL with your real profile -->
+                            <a href="https://www.linkedin.com/in/aparup-santra" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:aparupsantra2004@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="hero-card-image">
+                        <img src="assets/images/portrait.png" alt="Portrait of Aparup Santra">
                     </div>
                 </div>
 
 
 
             </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <!-- TODO: update dates / roles with your real timeline -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title glitch-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 — 2026</span>
+                    <h3>MCA — Final Year Project: Crime Detection</h3>
+                    <p>Chicago crime data analysis with HDBSCAN hotspot detection and ML forecasting. Python, data pipelines, evaluation.</p>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">HDBSCAN</span></div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 — 2025</span>
+                    <h3>Health Mate — Health & Wellness App</h3>
+                    <p>TypeScript app for tracking health and wellness data. Clean UI, reliable data handling.</p>
+                    <div class="tags"><span class="tag">TypeScript</span><span class="tag">HealthTech</span></div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2023 — 2024</span>
+                    <h3>E-Commerce Storefront Features</h3>
+                    <p>Storefront UI, product flows, and dashboard basics for a web commerce project.</p>
+                    <div class="tags"><span class="tag">Web</span><span class="tag">UI</span></div>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Ongoing</span>
+                    <h3>Data Analyst — Dashboards & Pipelines</h3>
+                    <p>PowerBI dashboards, SQL queries, MS Office reporting. Focus on clear insights from raw data.</p>
+                    <div class="tags"><span class="tag">PowerBI</span><span class="tag">SQL</span></div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -138,11 +228,7 @@
                 <!-- Project 1 -->
                 <div class="card">
                     <div class="card-icon">
-                        <!-- Placing a red bat logo replacing the t-shirt graphic -->
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-heart-pulse" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         Health Mate
@@ -154,9 +240,9 @@
                             <span class="tag">HealthTech</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/health-mate-2.0" target="_blank"
+                            <a href="https://github.com/Aparup321/health-mate-2.0" target="_blank" rel="noopener"
                                 class="btn-small">View Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <i class="fab fa-github card-link-icon" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -164,10 +250,7 @@
                 <!-- Project 2 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-timeline" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         Historia 2.0
@@ -180,9 +263,9 @@
                             <span class="tag">Data Viz</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/historia-2.0" target="_blank" class="btn-small">View
+                            <a href="https://github.com/Aparup321/historia-2.0" target="_blank" rel="noopener" class="btn-small">View
                                 Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <i class="fab fa-github card-link-icon" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -190,10 +273,7 @@
                 <!-- Project 3 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-terminal" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         Personal Portfolio
@@ -205,9 +285,8 @@
                             <span class="tag">CSS Physics</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/portfolio" target="_blank" class="btn-small">View
-                                Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <a href="https://github.com/Aparup321/portfolio" target="_blank" rel="noopener" class="btn-small">Code</a>
+                            <a href="https://aparup.xyz" target="_blank" rel="noopener" class="btn-small">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -215,10 +294,7 @@
                 <!-- Project 4 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-music" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         ESP Song Visualizer
@@ -230,9 +306,9 @@
                             <span class="tag">ESP32</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/esp_song" target="_blank" class="btn-small">View
+                            <a href="https://github.com/Aparup321/esp_song" target="_blank" rel="noopener" class="btn-small">View
                                 Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <i class="fab fa-github card-link-icon" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -240,10 +316,7 @@
                 <!-- Project 5 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-shield-halved" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         Crime Detection
@@ -255,9 +328,9 @@
                             <span class="tag">Machine Learning</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/crime_detection" target="_blank" class="btn-small">View
+                            <a href="https://github.com/Aparup321/crime_detection" target="_blank" rel="noopener" class="btn-small">View
                                 Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <i class="fab fa-github card-link-icon" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
@@ -265,10 +338,7 @@
                 <!-- Project 6 -->
                 <div class="card">
                     <div class="card-icon">
-                        <svg viewBox="0 0 100 50">
-                            <path
-                                d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
-                        </svg>
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
                     </div>
                     <div class="card-header">
                         Suggestion Website
@@ -280,9 +350,8 @@
                             <span class="tag">TypeScript</span>
                         </div>
                         <div class="card-footer">
-                            <a href="https://github.com/Aparup321/suggestion_website" target="_blank" class="btn-small">View
-                                Project</a>
-                            <i class="fab fa-github card-link-icon"></i>
+                            <a href="https://github.com/Aparup321/suggestion_website" target="_blank" rel="noopener" class="btn-small">Code</a>
+                            <a href="https://aparup.me" target="_blank" rel="noopener" class="btn-small">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -292,9 +361,11 @@
         </div>
     </section>
 
-    <section class="footer" id="contact">
+    </main>
+
+    <footer class="footer" id="contact">
         <div class="container">
-            <div style="width: 60px; margin: 0 auto 1rem auto; animation: pulse 2s infinite;">
+            <div style="width: 60px; margin: 0 auto 1rem auto; animation: pulse 2s infinite;" aria-hidden="true">
                 <svg viewBox="0 0 100 50"
                     style="fill: var(--accent-red); filter: drop-shadow(0 0 8px rgba(255, 30, 30, 0.6));">
                     <path
@@ -304,27 +375,76 @@
             <h2 style="color: var(--accent-red); margin-bottom: 1rem; font-size: 2rem;">Let's collaborate</h2>
             <p style="color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto;">Currently open to
                 new opportunities. Reach out if you'd like to work together.</p>
-            <div style="margin-top: 2rem;">
+            <div class="email-row" style="margin-top: 2rem;">
                 <a href="mailto:aparupsantra2004@gmail.com"
                     style="color: white; font-size: 1.5rem; font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent-red); transition: all 0.3s ease;">aparupsantra2004@gmail.com</a>
+                <button id="copy-email" type="button" class="btn-small" data-email="aparupsantra2004@gmail.com" aria-label="Copy email address">Copy</button>
             </div>
+            <form id="contact-form" class="contact-form" aria-label="Contact form">
+                <label class="visually-hidden" for="cf-name">Your name</label>
+                <input id="cf-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
+                <label class="visually-hidden" for="cf-email">Your email</label>
+                <input id="cf-email" name="email" type="email" placeholder="Your email" required autocomplete="email">
+                <label class="visually-hidden" for="cf-message">Your message</label>
+                <textarea id="cf-message" name="message" placeholder="Your message..." required rows="4"></textarea>
+                <button type="submit" class="btn-primary">Send via Email</button>
+                <p class="form-hint">Opens your mail client — no data stored.</p>
+            </form>
             <div
                 style="margin-top: 3rem; display: flex; justify-content: center; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
-                <a href="https://www.instagram.com/aparup_321/" target="_blank" class="footer-social-link">
-                    <i class="fab fa-instagram"></i> aparup_321
+                <a href="https://www.instagram.com/aparup_321/" target="_blank" rel="noopener" class="footer-social-link">
+                    <i class="fab fa-instagram" aria-hidden="true"></i> aparup_321
                 </a>
-                <a href="https://github.com/Aparup321" target="_blank" class="footer-social-link">
-                    <i class="fab fa-github"></i> Aparup321
+                <a href="https://github.com/Aparup321" target="_blank" rel="noopener" class="footer-social-link">
+                    <i class="fab fa-github" aria-hidden="true"></i> Aparup321
+                </a>
+                <!-- TODO: update LinkedIn URL with your real profile -->
+                <a href="https://www.linkedin.com/in/aparup-santra" target="_blank" rel="noopener" class="footer-social-link">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
                 </a>
             </div>
-            <p style="margin-top: 3rem; color: #4a4a4a; font-size: 0.8rem;">© 2026 APARUP SANTRA</p>
+            <p style="margin-top: 3rem; color: #4a4a4a; font-size: 0.8rem;">© <span id="year">2026</span> APARUP SANTRA</p>
         </div>
-    </section>
+    </footer>
 
 
 
     <!-- Scripts -->
     <script src="js/terminal.js"></script>
+    <script>
+    (function () {
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      var copyBtn = document.getElementById('copy-email');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+          var email = copyBtn.getAttribute('data-email');
+          function done() { copyBtn.textContent = 'Copied!'; setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 1500); }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).then(done).catch(function(){ fallback(); });
+          } else { fallback(); }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = email; document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
+            document.body.removeChild(ta);
+          }
+        });
+      }
+      var form = document.getElementById('contact-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name = document.getElementById('cf-name').value.trim();
+          var email = document.getElementById('cf-email').value.trim();
+          var msg = document.getElementById('cf-message').value.trim();
+          var subject = encodeURIComponent('Portfolio contact from ' + name);
+          var body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + email + ')');
+          window.location.href = 'mailto:aparupsantra2004@gmail.com?subject=' + subject + '&body=' + body;
+        });
+      }
+    })();
+    </script>
 </body>
 
 </html>

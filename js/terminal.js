@@ -9,11 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const commands = {
-        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> contact\n> system\n> matrix\n> clear',
+        'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> projects\n> experience\n> education\n> contact\n> resume\n> system\n> matrix\n> clear',
         'whoami': 'NAME: APARUP SANTRA\nROLE: SOFTWARE ENGINEER & DATA ANALYST\nFOCUS: Building data-driven solutions from complex datasets.',
-        'skills': 'SKILLS:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Problem Solving',
-        'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
-        'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.5\nNETWORK: SECURE',
+        'skills': 'SKILLS:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Python, SQL, TypeScript, React',
+        'projects': 'PROJECTS:\n- Health Mate (TypeScript)\n- Historia 2.0 (Data Viz)\n- ESP Song Visualizer (Python + ESP32)\n- Crime Detection (ML, HDBSCAN)\n- Suggestion Website (React, live at aparup.me)\nSee #work section for links.',
+        'experience': 'EXPERIENCE:\n- Health Mate app (TypeScript)\n- E-commerce storefront features\n- Data dashboards (PowerBI, SQL)\nSee #experience section for full timeline.',
+        'education': 'EDUCATION:\n- MCA — Final Year Project: Crime Detection\n  Chicago crime data, HDBSCAN + ML forecasting.',
+        'resume': 'RESUME:\nDownload at assets/resume.pdf\nOr email aparupsantra2004@gmail.com for latest copy.',
+        'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nLINKEDIN: linkedin.com/in/aparup-santra\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
+        'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.6\nNETWORK: SECURE',
     };
 
     input.addEventListener('keydown', function (e) {
@@ -137,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Boot Sequence
     const bootLines = [
-        "PORTFOLIO OS v2.5 LOADED...",
+        "PORTFOLIO OS v2.6 LOADED...",
         "LOADING PROFILE...",
         "CHECKING SYSTEM...",
         "ALL SYSTEMS READY.",
@@ -156,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => runBoot(0), 1000);
 
     // --- NEW CUSTOMIZATIONS (v2.5) ---
-    // (v2.6 Optimizations for Mobile)
+    // (v2.6 Optimizations for Mobile) — matrix density handled via fontSize above
 
     // 1. Spotlight Tracking with Throttling
     const spotlight = document.querySelector('.spotlight');
@@ -185,20 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
             ticking = true;
         }
     });
-
-    // Modified Matrix density for performance
-    const originalStartMatrix = startMatrix;
-    startMatrix = function () {
-        // Use a modified drop count if on mobile
-        const isMobile = window.innerWidth <= 1024;
-        const matrixCanvas = document.getElementById('matrix-canvas');
-        if (matrixCanvas) {
-            // We'll let the original function run but we can tweak drops if needed
-            // By overriding resize we can control columns
-        }
-        originalStartMatrix();
-    };
-
 
     // 2. Hacking Scramble Hover Effect for Project Cards
     const cards = document.querySelectorAll('.card');
