@@ -68,7 +68,8 @@ portfolio/
 ├── js/
 │   ├── terminal.js     # Terminal, matrix, scramble (v2.7 commands)
 │   ├── enhancements.js # Scroll-reveal, nav shrink, back-to-top
-│   └── pwa.js           # Service worker registration
+│   ├── pwa.js           # Service worker registration
+│   └── site.js          # Email copy, form, and footer behavior
 ├── service-worker.js    # Offline cache
 ├── scripts/
 │   └── validate.mjs     # Static-site validation

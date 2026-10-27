@@ -6,6 +6,7 @@ const PRECACHE_URLS = [
   '/js/terminal.js',
   '/js/enhancements.js',
   '/js/pwa.js',
+  '/js/site.js',
   '/manifest.webmanifest',
   '/assets/icons/icon-192.png',
   '/assets/icons/icon-512.png',

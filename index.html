@@ -9,6 +9,8 @@
     <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="preload" as="image" href="assets/images/batcave-bg.webp" type="image/webp" fetchpriority="high">
     <meta name="description" content="Portfolio of Aparup Santra - Data Analyst and Software Developer building web apps, mobile apps, and data solutions.">
     <meta name="theme-color" content="#0a0505">
@@ -410,40 +412,7 @@
     <script src="js/terminal.js"></script>
     <script src="js/enhancements.js" defer></script>
     <script src="js/pwa.js" defer></script>
-    <script>
-    (function () {
-      var yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-      var copyBtn = document.getElementById('copy-email');
-      if (copyBtn) {
-        copyBtn.addEventListener('click', function () {
-          var email = copyBtn.getAttribute('data-email');
-          function done() { copyBtn.textContent = 'Copied!'; setTimeout(function(){ copyBtn.textContent = 'Copy'; }, 1500); }
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(email).then(done).catch(function(){ fallback(); });
-          } else { fallback(); }
-          function fallback() {
-            var ta = document.createElement('textarea');
-            ta.value = email; document.body.appendChild(ta); ta.select();
-            try { document.execCommand('copy'); done(); } catch (e) {}
-            document.body.removeChild(ta);
-          }
-        });
-      }
-      var form = document.getElementById('contact-form');
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var name = document.getElementById('cf-name').value.trim();
-          var email = document.getElementById('cf-email').value.trim();
-          var msg = document.getElementById('cf-message').value.trim();
-          var subject = encodeURIComponent('Portfolio contact from ' + name);
-          var body = encodeURIComponent(msg + '\n\n— ' + name + ' (' + email + ')');
-          window.location.href = 'mailto:aparupsantra2004@gmail.com?subject=' + subject + '&body=' + body;
-        });
-      }
-    })();
-    </script>
+    <script src="js/site.js" defer></script>
 </body>
 
 </html>

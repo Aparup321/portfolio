@@ -28,7 +28,7 @@ for (const file of ['index.html', '404.html']) {
   }
 }
 
-for (const file of ['js/terminal.js', 'js/enhancements.js', 'js/pwa.js', 'service-worker.js']) {
+for (const file of ['js/terminal.js', 'js/enhancements.js', 'js/pwa.js', 'js/site.js', 'service-worker.js']) {
   try {
     execFileSync(process.execPath, ['--check', file], { stdio: 'pipe' });
   } catch {
