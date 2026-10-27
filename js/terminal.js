@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function runBoot(index) {
         if (index < bootLines.length) {
             typeWriter(bootLines[index], 'system-response', () => {
-                setTimeout(() => runBoot(index + 1), 300);
+                setTimeout(() => runBoot(index + 1), prefersReducedMotion ? 0 : 300);
             });
         }
     }
