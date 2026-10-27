@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('terminal-output');
+    const announcer = document.getElementById('terminal-announcer');
     const input = document.getElementById('terminal-input');
     const terminal = document.querySelector('.terminal-container');
     const isMobile = window.innerWidth <= 1024;
@@ -16,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'help': 'AVAILABLE COMMANDS: \n> whoami\n> skills\n> projects\n> experience\n> education\n> contact\n> resume\n> system\n> matrix\n> clear',
         'whoami': 'NAME: APARUP SANTRA\nROLE: SOFTWARE ENGINEER & DATA ANALYST\nFOCUS: Building data-driven solutions from complex datasets.',
         'skills': 'SKILLS:\n- Data Visualization (PowerBI, Tableau)\n- Machine Learning (Predictive Models)\n- Full-Stack Web Development\n- Python, SQL, TypeScript, React',
-        'projects': 'PROJECTS:\n- Health Mate (TypeScript)\n- Historia 2.0 (Data Viz)\n- ESP Song Visualizer (Python + ESP32)\n- Crime Detection (ML, HDBSCAN)\n- Suggestion Website (React, live at aparup.me)\nSee #work section for links.',
+        'projects': 'PROJECTS:\n- Health Mate (TypeScript)\n- Historia 2.0 (Data Viz)\n- Personal Portfolio (Vanilla JavaScript)\n- ESP Song Visualizer (Python + ESP32)\n- Crime Detection (ML, HDBSCAN)\n- Suggestion Website (React, live at aparup.me)\nSee #work section for links.',
         'experience': 'EXPERIENCE:\n- Health Mate app (TypeScript)\n- E-commerce storefront features\n- Data dashboards (PowerBI, SQL)\nSee #experience section for full timeline.',
         'education': 'EDUCATION:\n- MCA — Final Year Project: Crime Detection\n  Chicago crime data, HDBSCAN + ML forecasting.',
         'resume': 'RESUME:\nDownload at assets/resume.pdf\nOr email aparupsantra2004@gmail.com for latest copy.',
         'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nLINKEDIN: linkedin.com/in/aparup-santra-869a1743a\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
-        'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.6\nNETWORK: SECURE',
+        'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.7\nNETWORK: SECURE',
     };
 
     let matrixInterval = null;
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (val === 'clear') {
                     output.innerHTML = '';
+                    announce('Terminal cleared.');
                 } else if (val === 'matrix') {
                     startMatrix();
                 } else if (commands[val]) {
@@ -55,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         div.textContent = text;
         output.appendChild(div);
         scrollToBottom();
+        announce(text);
+    }
+
+    function announce(text) {
+        if (announcer) announcer.textContent = text;
     }
 
     function typeWriter(text, className, callback) {
@@ -65,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (prefersReducedMotion) {
             div.textContent = text;
             scrollToBottom();
+            announce(text);
             if (callback) callback();
             return;
         }
@@ -79,7 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollToBottom();
                 setTimeout(type, speed);
             } else if (callback) {
+                announce(text);
                 callback();
+            } else {
+                announce(text);
             }
         }
         type();
@@ -188,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Boot Sequence
     const bootLines = [
-        "PORTFOLIO OS v2.6 LOADED...",
+        "PORTFOLIO OS v2.7 LOADED...",
         "LOADING PROFILE...",
         "CHECKING SYSTEM...",
         "ALL SYSTEMS READY.",

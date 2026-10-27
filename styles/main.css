@@ -43,10 +43,6 @@ section {
   padding: 6rem 0;
 }
 
-.text-accent {
-  color: var(--accent-red);
-}
-
 .section-title {
   font-size: 2rem;
   font-weight: 800;
@@ -97,12 +93,6 @@ nav {
 }
 .brand-left { color: white; }
 .brand-right { color: var(--accent-red); }
-
-.bat-logo-svg {
-  width: 50px;
-  height: 25px;
-  fill: var(--accent-red);
-}
 
 .main-logo-img {
   height: 38px;
@@ -166,6 +156,15 @@ nav {
   padding-top: 8rem; /* Account for navbar */
   background: linear-gradient(to right, rgba(10, 5, 5, 0.9) 0%, rgba(10, 5, 5, 0.7) 100%), url('../assets/images/batcave-bg.jpg') center/cover no-repeat;
   background-attachment: fixed;
+}
+
+@supports (background-image: image-set(url('../assets/images/batcave-bg.webp') type('image/webp'))) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(10, 5, 5, 0.9) 0%, rgba(10, 5, 5, 0.7) 100%), image-set(
+      url('../assets/images/batcave-bg.webp') type('image/webp'),
+      url('../assets/images/batcave-bg.jpg') type('image/jpeg')
+    );
+  }
 }
 
 .hero-grid {
@@ -333,18 +332,6 @@ nav {
 .card:active {
   transform: translate(0, 0);
   box-shadow: 0px 0px 0px var(--accent-red);
-}
-
-.card-icon {
-  text-align: center;
-  padding: 2rem 0;
-  margin-bottom: 1rem;
-}
-
-.card-icon svg {
-  width: 60px;
-  height: 35px;
-  fill: var(--accent-red);
 }
 
 .card-header {
@@ -591,10 +578,6 @@ img { max-width: 100%; height: auto; }
     font-size: 16px;
   }
 
-  .true-ascii {
-    font-size: 0.4rem;
-  }
-
   .section-title {
     font-size: 1.5rem;
     text-align: center;
@@ -712,19 +695,6 @@ img { max-width: 100%; height: auto; }
   font-weight: bold;
 }
 
-.true-ascii {
-  font-size: 0.6rem;
-  line-height: 1.1;
-  white-space: pre;
-}
-
-.matrix-text {
-  color: #ff1a1a;
-  opacity: 0.8;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-}
-
 .terminal-input-line {
   display: flex;
   align-items: center;
@@ -840,7 +810,7 @@ body.matrix-active {
 }
 
 /* =========================================
-   MOBILE OPTIMIZATIONS (v2.6)
+   MOBILE OPTIMIZATIONS (v2.7)
    ========================================= */
 
 @media (max-width: 1024px) {
@@ -882,7 +852,7 @@ body.matrix-active {
 
 /* Performance hints for GPU */
 /* =========================================
-   ACCESSIBILITY + NEW SECTIONS (v2.6)
+   ACCESSIBILITY + NEW SECTIONS (v2.7)
    ========================================= */
 .skip-link {
   position: absolute;
@@ -1002,13 +972,6 @@ body.matrix-active {
 .timeline-item h3 { color: #fff; margin: 0.4rem 0 0.5rem; font-size: 1.1rem; }
 .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
 
-/* Project icons (replaces identical bat SVGs) */
-.card-icon i {
-  font-size: 2.2rem;
-  color: var(--accent-red);
-  filter: drop-shadow(0 0 8px rgba(230,26,26,0.4));
-}
-
 /* Contact form */
 .email-row {
   display: flex;
@@ -1090,9 +1053,6 @@ html { scrollbar-color: var(--accent-red) #0d0a0a; }
 .thumb-4 { background: linear-gradient(135deg, #0a2e1a, #1ae66a); }
 .thumb-5 { background: linear-gradient(135deg, #0a1a3d, #1a6ae6); }
 .thumb-6 { background: linear-gradient(135deg, #3d2a0a, #e6a81a); }
-/* legacy */
-.card-icon i { font-size: 2.2rem; color: var(--accent-red); }
-
 /* Portrait */
 .hero-card-image img {
   border: 2px solid #331515;

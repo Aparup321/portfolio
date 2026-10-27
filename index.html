@@ -4,28 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aparup Santra - Software Engineer & tech enthusiast </title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <title>Aparup Santra - Software Engineer &amp; Tech Enthusiast</title>
+    <link rel="icon" type="image/png" href="assets/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="preload" as="image" href="assets/images/batcave-bg.jpg" fetchpriority="high">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="preload" as="image" href="assets/images/batcave-bg.webp" type="image/webp" fetchpriority="high">
     <meta name="description" content="Portfolio of Aparup Santra - Data Analyst and Software Developer building web apps, mobile apps, and data solutions.">
     <meta name="theme-color" content="#0a0505">
     <link rel="canonical" href="https://aparup.xyz/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Aparup Santra - Software Engineer & Data Analyst">
+    <meta property="og:title" content="Aparup Santra - Software Engineer &amp; Tech Enthusiast">
     <meta property="og:description" content="I build web apps, mobile apps, and data-driven solutions. Focused on clean, efficient code and solving real-world problems.">
     <meta property="og:url" content="https://aparup.xyz/">
-    <meta property="og:image" content="https://aparup.xyz/assets/images/batcave-bg.jpg">
+    <meta property="og:image" content="https://aparup.xyz/assets/images/og-image.jpg">
+    <meta property="og:image:alt" content="Dark Batman-inspired portfolio artwork for Aparup Santra">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aparup Santra - Software Engineer & Data Analyst">
     <meta name="twitter:description" content="Web apps, mobile apps, and data-driven solutions.">
-    <meta name="twitter:image" content="https://aparup.xyz/assets/images/batcave-bg.jpg">
+    <meta name="twitter:image" content="https://aparup.xyz/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="Dark Batman-inspired portfolio artwork for Aparup Santra">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Load FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <script type="application/ld+json">
     {
@@ -33,7 +40,7 @@
       "@type": "Person",
       "name": "Aparup Santra",
       "url": "https://aparup.xyz/",
-      "jobTitle": "Software Engineer & tech enthusiast ",
+       "jobTitle": "Software Engineer & Tech Enthusiast",
       "email": "mailto:aparupsantra2004@gmail.com",
       "sameAs": [
         "https://github.com/Aparup321",
@@ -96,7 +103,8 @@
                     ABOUT ME</p>
                 <div class="terminal-container" style="margin-top: 0;">
                     <div class="terminal-header">PORTFOLIO TERMINAL</div>
-                    <div id="terminal-output" aria-live="polite"></div>
+                    <div id="terminal-output" role="log" aria-label="Terminal output" aria-live="off"></div>
+                    <div id="terminal-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
                     <div class="terminal-input-line">
                         <span aria-hidden="true">></span>
                         <label class="visually-hidden" for="terminal-input">Terminal input</label>
@@ -174,7 +182,7 @@
     </section>
 
     <!-- Experience & Education Section -->
-    <!-- TODO: update dates / roles with your real timeline -->
+    <!-- Keep this timeline aligned with current education and project work. -->
     <section id="experience">
         <div class="container">
             <h2 class="section-title glitch-title">Experience & Education</h2>
@@ -401,6 +409,7 @@
     <!-- Scripts -->
     <script src="js/terminal.js"></script>
     <script src="js/enhancements.js" defer></script>
+    <script src="js/pwa.js" defer></script>
     <script>
     (function () {
       var yearEl = document.getElementById('year');

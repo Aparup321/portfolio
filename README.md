@@ -40,7 +40,7 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - 6 project cards with gradient thumbnails: Health Mate, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
 - Contact footer with copy-email button + mailto form, email, Instagram, GitHub, LinkedIn
 
-**Responsive (v2.7 mobile opts)**
+**Responsive (v2.7)**
 - `<=1024px`: removes backdrop blur, reduces matrix density
 - `<=900px`: single-column hero, stacked pill nav
 - `<=600px`: scaled typography, full-width buttons, 280px terminal
@@ -49,8 +49,9 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 
 - Vanilla HTML5 / CSS3 / JavaScript — no framework, no build step
 - Fonts: Montserrat (Google Fonts) + Courier New mono
-- Icons: Font Awesome 6.4.0 CDN
+- Icons: Font Awesome 6.4.0 CDN with integrity verification
 - Hosting: GitHub Pages + custom domain (`CNAME` → `aparup.xyz`)
+- Offline support: web app manifest + service worker
 
 ## Project Structure
 
@@ -59,22 +60,31 @@ portfolio/
 ├── index.html          # Nav, hero, about, experience, projects, footer
 ├── CNAME               # aparup.xyz (GitHub Pages custom domain)
 ├── manifest.webmanifest # PWA manifest
+├── .nojekyll            # Keep .well-known files on GitHub Pages
 ├── robots.txt / sitemap.xml / 404.html
 ├── .gitignore / .env.example / .well-known/security.txt
 ├── styles/
 │   └── main.css        # Theme, layout, terminal, FX, responsive
 ├── js/
-│   ├── terminal.js     # Terminal, matrix, scramble (v2.6 commands)
-│   └── enhancements.js # Scroll-reveal, nav shrink, back-to-top
+│   ├── terminal.js     # Terminal, matrix, scramble (v2.7 commands)
+│   ├── enhancements.js # Scroll-reveal, nav shrink, back-to-top
+│   └── pwa.js           # Service worker registration
+├── service-worker.js    # Offline cache
+├── scripts/
+│   └── validate.mjs     # Static-site validation
+├── .github/workflows/
+│   └── validate.yml     # CI validation
 └── assets/
     ├── resume.pdf      # Real resume (replace to update)
     └── images/
         ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
-        ├── batcave-bg.jpg  # Hero background (1920px, compressed)
-        └── portrait.jpg    # About portrait (600px, lazy-loaded)
+        ├── batcave-bg.jpg / batcave-bg.webp # Hero background
+        ├── og-image.jpg    # Social sharing image (1200×630)
+        ├── portrait.jpg    # About artwork (600px, lazy-loaded)
+        └── icons/           # 192px and 512px PWA icons
 ```
 
-Images optimized v2.7: hero 3840px→1920px (~157KB), portrait PNG→JPG 600px (~43KB). Removed unused `batmobile.png`, `blueprint.png`, `hero-bat-bg.png`.
+Images optimized v2.7: WebP hero fallback, 1200×630 social preview, and dedicated PWA icons. Removed unused `batmobile.png`, `blueprint.png`, `hero-bat-bg.png`.
 
 ## Terminal Commands
 
@@ -88,7 +98,7 @@ Images optimized v2.7: hero 3840px→1920px (~157KB), portrait PNG→JPG 600px (
 | `education` | MCA + Crime Detection |
 | `resume` | Resume download path |
 | `contact` | GitHub + LinkedIn + email |
-| `system` | Status, location, portfolio version (v2.6) |
+| `system` | Status, location, portfolio version (v2.7) |
 | `matrix` | 15s red digital rain + glitch effect |
 | `clear` | Clear terminal |
 
