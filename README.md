@@ -131,7 +131,7 @@ GitHub Pages, root deployment:
 - Instagram: https://www.instagram.com/aparup_321/
 - LinkedIn: https://www.linkedin.com/in/aparup-santra-869a1743a/
 - Health Mate: https://github.com/Aparup321/health-mate-2.0
-- Historia 2.0: https://github.com/Aparup321/historia-2.0
+- Historia 2.0: https://github.com/Aparup321?tab=repositories
 
 ## License
 

@@ -1,10 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     const output = document.getElementById('terminal-output');
     const input = document.getElementById('terminal-input');
+    const terminal = document.querySelector('.terminal-container');
     const isMobile = window.innerWidth <= 1024;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!output || !input || !terminal) return;
 
     // Auto-focus terminal on click
-    document.querySelector('.terminal-container').addEventListener('click', () => {
+    terminal.addEventListener('click', () => {
         input.focus();
     });
 
@@ -19,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         'contact': 'CONTACT:\nGITHUB: github.com/Aparup321\nLINKEDIN: linkedin.com/in/aparup-santra-869a1743a\nEMAIL: aparupsantra2004@gmail.com\nSTATUS: Open to new opportunities.',
         'system': 'STATUS: ALL SYSTEMS NORMAL\nLOCATION: INDIA\nPORTFOLIO: v2.6\nNETWORK: SECURE',
     };
+
+    let matrixInterval = null;
+    let matrixEndTimeout = null;
+    let matrixClearTimeout = null;
+    let matrixResizeHandler = null;
 
     input.addEventListener('keydown', function (e) {
         if (e.key === 'Enter') {
@@ -53,6 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         div.className = className;
         output.appendChild(div);
 
+        if (prefersReducedMotion) {
+            div.textContent = text;
+            scrollToBottom();
+            if (callback) callback();
+            return;
+        }
+
         let i = 0;
         const speed = 10; // ms per char (faster for better feel)
 
@@ -70,6 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startMatrix() {
+        if (prefersReducedMotion) {
+            printLine("MATRIX EFFECT DISABLED FOR REDUCED MOTION.", "system-response");
+            return;
+        }
+
+        if (matrixInterval !== null) {
+            printLine("MATRIX EFFECT ALREADY RUNNING.", "system-response");
+            return;
+        }
+
+        if (matrixEndTimeout !== null) {
+            clearTimeout(matrixEndTimeout);
+            matrixEndTimeout = null;
+        }
+        if (matrixClearTimeout !== null) {
+            clearTimeout(matrixClearTimeout);
+            matrixClearTimeout = null;
+            if (matrixResizeHandler) {
+                window.removeEventListener('resize', matrixResizeHandler);
+                matrixResizeHandler = null;
+            }
+        }
+
         printLine("LOADING MATRIX EFFECT...", "system-response");
         printLine("RENDERING: DIGITAL RAIN v4.0", "system-response");
 
@@ -81,13 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Activate global styles
         body.classList.add('matrix-active');
+        canvas.style.removeProperty('opacity');
 
         // Setup Canvas
         function resize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-        window.addEventListener('resize', resize);
+        matrixResizeHandler = resize;
+        window.addEventListener('resize', matrixResizeHandler);
         resize();
 
         const fontSize = isMobile ? 24 : 16; // Larger font = fewer columns on mobile
@@ -117,18 +158,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        const matrixInterval = setInterval(draw, 33);
+        matrixInterval = setInterval(draw, 33);
 
         // Cleanup after 15 seconds
-        setTimeout(() => {
+        matrixEndTimeout = setTimeout(() => {
             clearInterval(matrixInterval);
+            matrixInterval = null;
             body.classList.remove('matrix-active');
             printLine("EFFECT COMPLETE. CLEANING UP.", "system-response");
             printLine("SYSTEM RESTORED TO NORMAL.", "system-response");
-            canvas.style.opacity = '0';
-            setTimeout(() => {
+            canvas.style.removeProperty('opacity');
+            matrixEndTimeout = null;
+            matrixClearTimeout = setTimeout(() => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                window.removeEventListener('resize', resize);
+                if (matrixResizeHandler) {
+                    window.removeEventListener('resize', matrixResizeHandler);
+                    matrixResizeHandler = null;
+                }
+                matrixClearTimeout = null;
             }, 1000);
         }, 15000);
     }
@@ -157,11 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Delay start for dramatic effect
-    setTimeout(() => runBoot(0), 1000);
+    setTimeout(() => runBoot(0), prefersReducedMotion ? 0 : 1000);
 
     // 1. Hacking Scramble Hover Effect for Project Cards
     const cards = document.querySelectorAll('.card');
     const charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
+
+    if (prefersReducedMotion) return;
 
     cards.forEach(card => {
         const header = card.querySelector('.card-header');

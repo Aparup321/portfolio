@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
   background: var(--bg-dark);
 }
 
@@ -59,7 +60,7 @@ section {
   display: flex;
   justify-content: center;
   padding: 1rem 1rem 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -174,6 +175,13 @@ nav {
   align-items: center;
 }
 
+@media (min-width: 901px) {
+  /* Give the About card enough room for readable text beside the image. */
+  #about-details .hero-grid {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  }
+}
+
 .hero-left h1 {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   font-weight: 900;
@@ -212,6 +220,7 @@ nav {
 
 .hero-card-content {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
 }
@@ -460,6 +469,10 @@ img { max-width: 100%; height: auto; }
     gap: 3rem; 
     text-align: center;
   }
+
+  #about-details .hero-grid {
+    grid-template-columns: 1fr;
+  }
   
   .hero-left {
     display: flex;
@@ -514,6 +527,10 @@ img { max-width: 100%; height: auto; }
     padding: 1rem 1rem 0;
   }
 
+  html {
+    scroll-padding-top: 1rem;
+  }
+
   .hero {
     padding-top: 3rem;
     min-height: auto;
@@ -550,6 +567,7 @@ img { max-width: 100%; height: auto; }
 
   .hero-card-image {
     width: 100%;
+    height: 280px;
     margin-top: 1.5rem;
   }
 
@@ -592,6 +610,11 @@ img { max-width: 100%; height: auto; }
   }
 
   .footer-social-link { font-size: 1rem; }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
 
   .about-highlights { grid-template-columns: 1fr; }
   .brand-left, .brand-right { letter-spacing: 1px; }
@@ -676,7 +699,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .error-cmd {
-  color: #880000;
+  color: #ff4d4d;
   font-weight: bold;
 }
 
@@ -837,11 +860,18 @@ body.matrix-active {
   }
 }
 
-/* Performance hints for GPU */
-.terminal-container, .card, .hero-left h1 {
-  will-change: transform, opacity;
+@media (min-width: 901px) and (max-width: 1100px) {
+  #about-details .hero-card {
+    flex-direction: column;
+  }
+
+  #about-details .hero-card-image {
+    width: 100%;
+    height: 280px;
+  }
 }
 
+/* Performance hints for GPU */
 /* =========================================
    ACCESSIBILITY + NEW SECTIONS (v2.6)
    ========================================= */
@@ -956,6 +986,10 @@ body.matrix-active {
   letter-spacing: 1px;
   font-weight: 700;
 }
+.timeline-date,
+.tag {
+  color: #ff4d4d;
+}
 .timeline-item h3 { color: #fff; margin: 0.4rem 0 0.5rem; font-size: 1.1rem; }
 .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
 
@@ -995,7 +1029,7 @@ body.matrix-active {
   border-color: var(--accent-red);
   outline: none;
 }
-.form-hint { color: #6b6b6b; font-size: 0.8rem; text-align: center; }
+.form-hint { color: #9a9a9a; font-size: 0.8rem; text-align: center; }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; }
@@ -1079,14 +1113,29 @@ html { scrollbar-color: var(--accent-red) #0d0a0a; }
   color: var(--accent-red);
   cursor: pointer;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
   z-index: 9000;
 }
-#to-top.show { opacity: 1; pointer-events: auto; }
+#to-top.show { opacity: 1; visibility: visible; pointer-events: auto; }
 #to-top:hover { background: var(--accent-red); color: #fff; transform: translateY(-3px); }
 
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .bat-signal,
+  .footer .container > div[aria-hidden="true"],
+  .glitch-title:hover {
+    animation: none !important;
+  }
+
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }
