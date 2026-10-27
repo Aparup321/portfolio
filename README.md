@@ -48,7 +48,7 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 ## Tech Stack
 
 - Vanilla HTML5 / CSS3 / JavaScript — no framework, no build step
-- Fonts: Montserrat (Google Fonts) + Courier New mono
+- Fonts: self-hosted Montserrat + Courier New mono
 - Icons: Font Awesome 6.4.0 CDN with integrity verification
 - Hosting: GitHub Pages + custom domain (`CNAME` → `aparup.xyz`)
 - Offline support: web app manifest + service worker
@@ -78,6 +78,8 @@ portfolio/
 │   └── validate.yml     # CI validation
 └── assets/
     ├── resume.pdf      # Real resume (replace to update)
+    ├── fonts/
+    │   └── montserrat-latin.woff2 # Self-hosted web font
     └── images/
         ├── logo.png        # Nav logo (inverted + screen-blended via CSS)
         ├── batcave-bg.jpg / batcave-bg.webp # Hero background

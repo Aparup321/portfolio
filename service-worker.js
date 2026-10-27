@@ -18,6 +18,7 @@ const PRECACHE_URLS = [
   '/js/pwa.js',
   '/js/site.js',
   '/manifest.webmanifest',
+  '/assets/fonts/montserrat-latin.woff2',
   '/assets/icons/icon-192.png',
   '/assets/icons/icon-512.png',
   '/assets/images/logo.png',

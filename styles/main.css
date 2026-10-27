@@ -1,4 +1,10 @@
-/* Fonts loaded via <link> in index.html for performance (was @import) */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../assets/fonts/montserrat-latin.woff2') format('woff2');
+}
 
 :root {
   --bg-dark: #0a0505;
