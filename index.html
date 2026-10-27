@@ -86,32 +86,34 @@
     </header>
 
     <main id="main" tabindex="-1">
-    <section class="hero" id="about">
-        <div class="container hero-grid">
+    <section class="hero hero-main" id="about" aria-labelledby="hero-title">
+        <div class="container hero-grid hero-main-grid">
 
             <!-- Left Side Intro Text -->
-            <div class="hero-left">
+            <div class="hero-left hero-intro">
                 <!-- Bat Signal Background -->
                 <div class="bat-signal" aria-hidden="true">
                     <svg class="bat-signal-svg" viewBox="0 0 100 50">
                         <path d="M 50 45 Q 25 25 5 15 C 20 15 30 5 40 15 L 45 0 L 50 5 L 55 0 L 60 15 C 70 5 80 15 95 15 Q 75 25 50 45 Z" />
                     </svg>
                 </div>
-                <h1 class="glitch-title">HI, I'M<br>APARUP SANTRA</h1>
-                <p>I build web apps, mobile apps, and data-driven solutions. Focused on clean, efficient code and solving real-world problems.</p>
-                <div class="hero-cta">
+                <p class="hero-eyebrow">SOFTWARE ENGINEER <span aria-hidden="true">/</span> PRACTICAL BUILDER</p>
+                <h1 class="hero-title" id="hero-title">
+                    <span class="hero-title-greeting">HI, I'M</span>
+                    <span class="hero-title-name">Aparup Santra</span>
+                </h1>
+                <p class="hero-lede">I’m a <strong>Software Engineer</strong> who enjoys building practical web, mobile, and data-driven applications—and solving problems with clear, reliable code.</p>
+                <div class="hero-cta" role="group" aria-label="Hero actions">
                     <a href="#work" class="btn-primary">View Projects</a>
                     <a href="assets/resume.pdf" class="btn-secondary" download>Download Resume</a>
-                    <a href="#contact" class="btn-secondary">Hire Me</a>
+                    <a href="#contact" class="hero-contact-link">Hire Me <span aria-hidden="true">→</span></a>
                 </div>
                 <p class="hero-stats">6+ projects • Python / SQL / TypeScript • PowerBI / ML</p>
             </div>
 
-            <div class="hero-right">
+            <div class="hero-right hero-terminal-side">
                 <div class="hero-terminal-wrap">
-                <p
-                    class="terminal-label">
-                    ABOUT ME</p>
+                <p class="terminal-label"><span class="terminal-status" aria-hidden="true"></span> INTERACTIVE PROFILE</p>
                 <div class="terminal-container">
                     <div class="terminal-header">PORTFOLIO TERMINAL</div>
                     <div id="terminal-output" role="log" aria-label="Terminal output" aria-live="off"></div>
