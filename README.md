@@ -60,6 +60,7 @@ portfolio/
 ├── index.html          # Nav, hero, about, experience, projects, footer
 ├── CNAME               # aparup.xyz (GitHub Pages custom domain)
 ├── manifest.webmanifest # PWA manifest
+├── _headers             # Security headers for Cloudflare/Netlify
 ├── .nojekyll            # Keep .well-known files on GitHub Pages
 ├── robots.txt / sitemap.xml / 404.html
 ├── .gitignore / .env.example / .well-known/security.txt

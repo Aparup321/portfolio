@@ -1,5 +1,5 @@
 {
-  "name": "Aparup Santra — Software Engineer & Data Analyst",
+  "name": "Aparup Santra — Software Engineer & Tech Enthusiast",
   "short_name": "Aparup",
   "id": "/",
   "start_url": "/",
@@ -8,7 +8,7 @@
   "lang": "en",
   "background_color": "#0a0505",
   "theme_color": "#0a0505",
-  "description": "Portfolio of Aparup Santra — web apps, mobile apps, and data-driven solutions.",
+  "description": "Aparup Santra is a software engineer and data analyst building web apps, mobile apps, dashboards, and data-driven solutions.",
   "categories": ["portfolio", "productivity"],
   "icons": [
     {

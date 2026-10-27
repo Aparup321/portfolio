@@ -1,4 +1,14 @@
-const CACHE_NAME = 'aparup-portfolio-v1';
+const CACHE_NAME = 'aparup-portfolio-v2';
+const NETWORK_FIRST_PATHS = new Set([
+  '/',
+  '/index.html',
+  '/styles/main.css',
+  '/js/terminal.js',
+  '/js/enhancements.js',
+  '/js/pwa.js',
+  '/js/site.js',
+  '/manifest.webmanifest',
+]);
 const PRECACHE_URLS = [
   '/',
   '/index.html',
@@ -40,9 +50,17 @@ self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) return;
 
-  if (event.request.mode === 'navigate') {
+  if (event.request.mode === 'navigate' || NETWORK_FIRST_PATHS.has(requestUrl.pathname)) {
     event.respondWith(
-      fetch(event.request).catch(() => caches.match('/index.html'))
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match('/index.html')))
     );
     return;
   }
