@@ -51,6 +51,7 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - Fonts: self-hosted Montserrat + Courier New mono
 - Icons: Font Awesome 6.4.0 CDN with integrity verification
 - Hosting: GitHub Pages + custom domain (`CNAME` → `aparup.xyz`)
+- Contact delivery: Formspree with a `mailto:` fallback
 - Offline support: web app manifest + service worker
 
 ## Project Structure
@@ -126,7 +127,7 @@ python3 -m http.server 8000
 - **Terminal text:** `commands` + `bootLines` in `js/terminal.js`
 - **Projects:** duplicate a `.card` block in `#work` in `index.html`
 - **Bio/skills:** `.hero-card-content` about block in `#about-details`
-- **Contact:** `mailto:` + `.footer-social-link` block in `#contact`
+- **Contact:** Formspree endpoint plus `mailto:` fallback in `#contact`
 - **Logo blend:** `.main-logo-img` uses `filter: invert(1) contrast(200%)` + `mix-blend-mode: screen` to knock out the grey background
 
 ## Deployment

@@ -34,14 +34,59 @@
 
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
+    const status = document.getElementById('form-status');
+    const submitButton = document.getElementById('contact-submit');
+
+    const openMailFallback = () => {
       const name = document.getElementById('cf-name').value.trim();
       const email = document.getElementById('cf-email').value.trim();
       const message = document.getElementById('cf-message').value.trim();
       const subject = encodeURIComponent(`Portfolio contact from ${name}`);
       const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
       window.location.href = `mailto:aparupsantra2004@gmail.com?subject=${subject}&body=${body}`;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (form.dataset.submitting === 'true') return;
+      form.dataset.submitting = 'true';
+      if (status) {
+        status.textContent = 'Sending your message…';
+        status.className = 'form-status';
+      }
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending…';
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+        form.reset();
+        if (status) {
+          status.textContent = 'Thanks — your message was sent successfully.';
+          status.className = 'form-status is-success';
+        }
+      } catch {
+        if (status) {
+          status.textContent = 'Online delivery was unavailable. Opening your email client instead…';
+          status.className = 'form-status is-error';
+        }
+        openMailFallback();
+      } finally {
+        form.dataset.submitting = 'false';
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send Message';
+        }
+      }
     });
   }
 })();

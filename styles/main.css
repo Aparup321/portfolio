@@ -1361,6 +1361,16 @@ body.matrix-active {
   border-color: var(--accent-red);
   outline: none;
 }
+.form-status {
+  min-height: 1.4em;
+  color: #d8caca;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.form-status.is-success { color: #8ff0b0; }
+.form-status.is-error { color: #ff8585; }
+
 .form-hint { color: #9a9a9a; font-size: 0.8rem; text-align: center; }
 
 @keyframes pulse {

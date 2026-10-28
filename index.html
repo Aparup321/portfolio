@@ -385,15 +385,19 @@
                     class="contact-email-link">aparupsantra2004@gmail.com</a>
                 <button id="copy-email" type="button" class="btn-small" data-email="aparupsantra2004@gmail.com" aria-label="Copy email address">Copy</button>
             </div>
-            <form id="contact-form" class="contact-form" aria-label="Contact form">
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/myeejlvw" method="POST" aria-label="Contact form">
                 <label class="visually-hidden" for="cf-name">Your name</label>
                 <input id="cf-name" name="name" type="text" placeholder="Your name" required autocomplete="name">
                 <label class="visually-hidden" for="cf-email">Your email</label>
                 <input id="cf-email" name="email" type="email" placeholder="Your email" required autocomplete="email">
                 <label class="visually-hidden" for="cf-message">Your message</label>
                 <textarea id="cf-message" name="message" placeholder="Your message..." required rows="4"></textarea>
-                <button type="submit" class="btn-primary">Send via Email</button>
-                <p class="form-hint">Opens your mail client — no data stored.</p>
+                <label class="visually-hidden" for="cf-website">Leave this field blank</label>
+                <input id="cf-website" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_subject" value="New portfolio contact from aparup.xyz">
+                <button id="contact-submit" type="submit" class="btn-primary">Send Message</button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+                <p class="form-hint">Messages are sent through Formspree. You can also email me directly above.</p>
             </form>
             <div class="footer-socials">
                 <a href="https://www.instagram.com/aparup_321/" target="_blank" rel="noopener" class="footer-social-link">
