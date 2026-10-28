@@ -10,9 +10,10 @@
   --bg-dark: #0a0505;
   --bg-gradient: radial-gradient(circle at top right, #240a0a 0%, var(--bg-dark) 50%);
   --accent-red: #e61a1a;
+  --accent-red-text: #ff4d4d;
   --accent-red-bright: #ff3333;
   --text-main: #ffffff;
-  --text-muted: #b0b0b0;
+  --text-muted: #bdbdbd;
   
   --panel-bg: #110d0d;
   --panel-border: 1px solid #331515;
@@ -98,7 +99,7 @@ nav {
   white-space: nowrap;
 }
 .brand-left { color: white; }
-.brand-right { color: var(--accent-red); }
+.brand-right { color: var(--accent-red-text); }
 
 .main-logo-img {
   height: 38px;
@@ -193,7 +194,7 @@ nav {
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   /* Slight glow as in reference */
   text-shadow: 0 0 20px rgba(230, 26, 26, 0.3);
 }
@@ -448,7 +449,7 @@ nav {
 }
 
 .terminal-label {
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   font-weight: 800;
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
@@ -467,7 +468,7 @@ nav {
 
 .about-intro-title {
   font-size: 3rem;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   margin-bottom: 1rem;
   line-height: 1.1;
 }
@@ -498,7 +499,7 @@ nav {
 
 .hero-card-content h2 {
   font-size: 2.5rem;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
@@ -544,7 +545,7 @@ nav {
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
 }
 
 .card-socials {
@@ -561,7 +562,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   text-decoration: none;
   transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -650,7 +651,7 @@ nav {
 }
 
 .tag {
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -679,7 +680,7 @@ nav {
 
 .btn-small:hover {
   border-color: var(--accent-red);
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   transform: translate(-3px, -3px);
   box-shadow: 4px 4px 0px var(--accent-red);
 }
@@ -690,7 +691,7 @@ nav {
 }
 
 .card-link-icon {
-  color: var(--accent-red);
+  color: var(--accent-red-text);
 }
 
 /* Keep long email addresses inside narrow screens */
@@ -720,7 +721,7 @@ nav {
 }
 
 .footer-title {
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -771,7 +772,7 @@ nav {
 
 .lost-title {
   font-size: 4rem;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
 }
 
 .lost-description {
@@ -791,7 +792,7 @@ nav {
 }
 
 .footer-social-link:hover {
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   transform: translateY(-3px);
 }
 
@@ -993,7 +994,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 8px;
   padding: 1rem;
   font-family: 'Courier New', Courier, monospace;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.1), 0 10px 20px rgba(0,0,0,0.8);
   height: 300px;
   width: 100%;
@@ -1040,8 +1041,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .system-response {
-  color: #ff4d4d;
-  text-shadow: 0 0 3px #ff4d4d;
+  color: var(--accent-red-text);
+  text-shadow: 0 0 3px var(--accent-red-text);
   margin-bottom: 0.2rem;
 }
 
@@ -1051,7 +1052,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .error-cmd {
-  color: #ff4d4d;
+  color: var(--accent-red-text);
   font-weight: bold;
 }
 
@@ -1267,7 +1268,7 @@ body.matrix-active {
 }
 .btn-primary:hover {
   background: transparent;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   transform: translate(-3px, -3px);
   box-shadow: 4px 4px 0 var(--accent-red);
 }
@@ -1278,7 +1279,7 @@ body.matrix-active {
 }
 .btn-secondary:hover {
   border-color: var(--accent-red);
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   transform: translate(-3px, -3px);
   box-shadow: 4px 4px 0 var(--accent-red);
 }
@@ -1320,14 +1321,14 @@ body.matrix-active {
 }
 .timeline-date {
   font-family: 'Courier New', monospace;
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   font-size: 0.8rem;
   letter-spacing: 1px;
   font-weight: 700;
 }
 .timeline-date,
 .tag {
-  color: #ff4d4d;
+  color: var(--accent-red-text);
 }
 .timeline-item h3 { color: #fff; margin: 0.4rem 0 0.5rem; font-size: 1.1rem; }
 .timeline-item p { color: var(--text-muted); font-size: 0.9rem; }
@@ -1449,7 +1450,7 @@ html { scrollbar-color: var(--accent-red) #0d0a0a; }
   border-radius: 50%;
   border: 1px solid var(--accent-red);
   background: rgba(15,8,8,0.9);
-  color: var(--accent-red);
+  color: var(--accent-red-text);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
