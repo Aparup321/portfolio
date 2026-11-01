@@ -1424,6 +1424,8 @@ html { scrollbar-color: var(--accent-red) #0d0a0a; }
 .thumb-4 { background: linear-gradient(135deg, #0a2e1a, #1ae66a); }
 .thumb-5 { background: linear-gradient(135deg, #0a1a3d, #1a6ae6); }
 .thumb-6 { background: linear-gradient(135deg, #3d2a0a, #e6a81a); }
+.thumb-7 { background: linear-gradient(135deg, #0a1a2e, #147d8d); }
+.thumb-8 { background: linear-gradient(135deg, #19300d, #6fae28); }
 /* Portrait */
 .hero-card-image img {
   border: 2px solid #331515;
