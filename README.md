@@ -37,8 +37,8 @@ Theme: dark `#0a0505`, red accent `#e61a1a`, Montserrat + Courier New mono.
 - Hero split layout with bat-signal SVG background + CTAs (View Projects / Download Resume / Hire Me)
 - About card: Data Viz (PowerBI), ML, Full-Stack, skills list, Recent Work + portrait (`portrait.jpg`, lazy-loaded)
 - Experience & Education timeline (`#experience`)
-- 6 project cards with gradient thumbnails: Health Mate, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
-- Contact footer with copy-email button + mailto form, email, Instagram, GitHub, LinkedIn
+- 8 project cards with gradient thumbnails: Health Mate, Edge Wake, SpendWise, Historia 2.0, Personal Portfolio, ESP Song Visualizer, Crime Detection, Suggestion Website
+- Contact footer with copy-email button + Formspree form with mailto fallback, email, Instagram, GitHub, LinkedIn
 
 **Responsive (v2.7)**
 - `<=1024px`: removes backdrop blur, reduces matrix density
